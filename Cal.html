@@ -1,0 +1,64 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <center>
+    <form name ="calculator">
+        <table>
+            <tr>
+                <td colspan="4">
+                    <input type="text" name="Display" id="display" placeholder="0" disabled>	
+                </td>
+            </tr>
+            <tr>
+                <td><input type="button" name="one" value="1" onclick="append('1')"></td>
+
+                <td><input type="button" name="two" value="2" onclick="append('2')"></td>
+
+                <td><input type="button" name="three" value="3" onclick="append('3')"></td>
+
+                <td><input type="button" class="operator" name="plus" value="+" onclick="append('+')"></td>
+            </tr>
+            <tr>				
+
+                <td><input type="button" name="four" value="4" onclick="append('4')"></td>
+            
+                <td><input type="button" name="five" value="5" onclick="append('5')"></td>
+
+                <td><input type="button" name="six" value="6" onclick="append('6')"></td>
+
+                <td><input type="button" class="operator" name="substract" value="-" onclick="append('-')"></td>
+            
+            </tr>				
+            <tr>
+
+                <td><input type="button" name="seven" value="7" onclick="append('7')"></td>				
+
+                <td><input type="button" name="eight" value="8" onclick="append('8')"></td>
+
+                <td><input type="button" name="nine" value="9" onclick="append('9')"></td>
+
+                <td><input type="button" class="operator" name="multiply" value="×" onclick="append('*')"></td>
+                
+            </tr>
+            <tr>
+                <td><input class="noselect red"type="button" name="dot" value="." onclick="append('.')"></td>
+
+                <td><input class="noselect red"type="button" name="zero" value="0" onclick="append('0')"></td>
+
+                <td><input class="noselect red" type="button" name="doit" value="=" onclick="calculate()"></td>
+                
+                <td><input class="noselect red"type="button" class="operator" name="devide" value="÷" onclick="append('/')"></td>
+
+            </tr>
+        </table>
+    </form>
+    </center>
+    <script src="script.js"></script>
+</body>
+</html>

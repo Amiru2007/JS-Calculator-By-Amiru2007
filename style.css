@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #333333;
+}
+
+form {
+    margin-top: 100px;
+    padding: 30px;
+    width: fit-content;
+    height: fit-content;
+    background: #333333;
+    border-radius: 15px;
+	box-shadow: -5px -5px 15px #444, 5px 5px 15px #222, inset 5px 5px 10px #444, inset -5px -5px 10px #222;
+}
+
+#display {
+    background: none;
+    height: 60px;
+    width: 300px;
+    font-size: 30px;
+    padding-left: 13px;
+    padding-right: 13px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    text-align: right;
+    color: #ffffff;
+	box-shadow: -5px -5px 15px #444, 5px 5px 15px #222, inset 5px 5px 10px #444, inset -5px -5px 10px #222;
+}
+
+tr {
+    display: flex;
+    justify-content: space-between;
+}
+
+input {
+    background: #333;
+    width: 64px;
+    height: 45px;
+    margin-top: 6px;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+	box-shadow: -5px -5px 15px #444, 5px 5px 15px #222, inset 5px 5px 10px #444, inset -5px -5px 10px #222;
+	color: #fff;
+}
+
+input:active {
+	box-shadow: -5px -5px 15px #444, 5px 5px 15px #222, inset 5px 5px 10px #222, inset -5px -5px 10px #444;
+	color: #ff5e00;
+	text-shadow: 0px 0px 10px #f87a31;
+}
+
+.noselect {
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+		-webkit-tap-highlight-color: transparent;
+}
