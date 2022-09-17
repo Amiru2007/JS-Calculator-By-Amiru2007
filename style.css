@@ -29,8 +29,13 @@ form {
     margin-bottom: 15px;
     text-align: right;
     color: #ffffff;
-	box-shadow: -5px -5px 15px #444, 5px 5px 15px #222, inset 5px 5px 10px #444, inset -5px -5px 10px #222;
+	box-shadow: -5px -5px 15px #444, 5px 5px 15px #222, inset 5px 5px 10px #222, inset -5px -5px 10px #444;
     letter-spacing: 2px;
+}
+
+#display:active {
+	color: #ffffff;
+	text-shadow: none;
 }
 
 #clear {
@@ -62,7 +67,7 @@ tr {
 input {
     background: #333;
     width: 80px;
-    height: 45px;
+    height: 50px;
     margin-top: 6px;
     border: none;
     border-radius: 5px;
@@ -80,7 +85,7 @@ input:active {
 #backspace {
     background: #333;
     width: 180px;
-    height: 45px;
+    height: 50px;
     margin-top: 6px;
     border: none;
     border-radius: 5px;
