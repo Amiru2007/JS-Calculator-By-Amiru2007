@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600&display=swap');
 
 * {
     font-family: 'Poppins', sans-serif;
@@ -26,7 +26,7 @@ form {
     padding-left: 13px;
     padding-right: 13px;
     border-radius: 5px;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
     text-align: right;
     color: #ffffff;
 	box-shadow: -5px -5px 15px #444, 5px 5px 15px #222, inset 5px 5px 10px #444, inset -5px -5px 10px #222;
@@ -39,7 +39,7 @@ tr {
 
 input {
     background: #333;
-    width: 64px;
+    width: 80px;
     height: 45px;
     margin-top: 6px;
     border: none;
@@ -55,12 +55,23 @@ input:active {
 	text-shadow: 0px 0px 10px #f87a31;
 }
 
-.noselect {
-  -webkit-touch-callout: none;
-    -webkit-user-select: none;
-     -khtml-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
-		-webkit-tap-highlight-color: transparent;
+#clear {
+    background: none;
+    height: 60px;
+    width: 60px;
+    font-size: 30px;
+    border-radius: 5px;
+    border: none;
+    margin-left: 10px;
+    margin-bottom: 5px;
+    text-align: center;
+    color: #ffffff;
+	box-shadow: -5px -5px 15px #444, 5px 5px 15px #222, inset 5px 5px 10px #444, inset -5px -5px 10px #222;
+    font-weight: 700;
+}
+
+#clear:active {
+	box-shadow: -5px -5px 15px #444, 5px 5px 15px #222, inset 5px 5px 10px #222, inset -5px -5px 10px #444;
+	color: #ff5e00;
+	text-shadow: 0px 0px 10px #f87a31;
 }

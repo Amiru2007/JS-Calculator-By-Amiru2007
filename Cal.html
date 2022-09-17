@@ -12,7 +12,8 @@
         <table>
             <tr>
                 <td colspan="4">
-                    <input type="text" name="Display" id="display" placeholder="0" disabled>	
+                    <input type="text" name="Display" id="display" placeholder="0" disabled>
+                    <button id="clear" onclick="document.getElementById('display').value = ''">C</button>	
                 </td>
             </tr>
             <tr>
@@ -47,13 +48,14 @@
                 
             </tr>
             <tr>
-                <td><input class="noselect red"type="button" name="dot" value="." onclick="append('.')"></td>
 
-                <td><input class="noselect red"type="button" name="zero" value="0" onclick="append('0')"></td>
+                <td><input type="button" name="dot" value="." onclick="append('.')"></td>
 
-                <td><input class="noselect red" type="button" name="doit" value="=" onclick="calculate()"></td>
+                <td><input type="button" name="zero" value="0" onclick="append('0')"></td>
+
+                <td><input type="button" name="doit" value="=" onclick="calculate()"></td>
                 
-                <td><input class="noselect red"type="button" class="operator" name="devide" value="÷" onclick="append('/')"></td>
+                <td><input type="button" class="operator" name="devide" value="÷" onclick="append('/')"></td>
 
             </tr>
         </table>
