@@ -52,10 +52,17 @@
                 <td><input type="button" name="dot" value="." onclick="append('.')"></td>
 
                 <td><input type="button" name="zero" value="0" onclick="append('0')"></td>
-
-                <td><input type="button" name="doit" value="=" onclick="calculate()"></td>
+                
+                <td><input type="button" class="operator" name="multiply" value="x&#x207F;" onclick="append('**')"></td>
                 
                 <td><input type="button" class="operator" name="devide" value="÷" onclick="append('/')"></td>
+
+            </tr>
+            <tr>
+
+                <td><input class="bottom" id="backspace" type="button" value="⌫" onclick="back('<')"></td>
+
+                <td><input class="bottom" type="button" name="doit" value="=" onclick="calculate()"></td>
 
             </tr>
         </table>
