@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@400;700&display=swap');
 
 * {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Dosis', sans-serif;
 }
 
 body {
@@ -57,13 +57,22 @@ form {
 	text-shadow: none;
 }
 
+.history {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.operator {
+    font-size: 30px;
+}
+
 #displayHistory {
     margin-top: 15px;
     background: none;
     height: 45px;
     width: 350px;
     font-size: 30px;
-    padding-top: 13px;
+    padding-top: 4px;
     padding-left: 13px;
     padding-right: 13px;
     border-radius: 5px;
