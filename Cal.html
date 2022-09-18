@@ -13,7 +13,7 @@
             <tr>
                 <td colspan="4">
                     <input type="text" name="Display" id="display" placeholder="0" disabled>
-                    <button id="clear" onclick="document.getElementById('display').value = ''">C</button>	
+                    <input class="clear" type="button" onclick="clearFields()" value="C">
                 </td>
             </tr>
             <tr>
@@ -62,7 +62,16 @@
 
                 <td><input class="bottom" id="backspace" type="button" value="⌫" onclick="back('<')"></td>
 
-                <td><input class="bottom" type="button" name="doit" value="=" onclick="calculate()"></td>
+                <td><input class="history" type="button" name="his" value="H" onclick="memo()"></td>
+
+                <td><input class="bottom" type="button" onclick="negate()" value="+/-"></td>
+
+                <td><input class="bottom" type="button" name="doit" value="=" onclick="calculate(), history()"></td>
+
+            </tr>
+            <tr>
+
+                <td><p type="text" name="Display" id="displayHistory" disabled></p></td>
 
             </tr>
         </table>
