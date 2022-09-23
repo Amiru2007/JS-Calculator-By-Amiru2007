@@ -23,7 +23,7 @@
 
                 <td><input type="button" name="three" value="3" onclick="append('3')"></td>
 
-                <td><input type="button" class="operator" name="plus" value="+" onclick="append('+')"></td>
+                <td><input type="button" class="operator" name="plus" value="+" onclick="append('+'), begin()"></td>
             </tr>
             <tr>				
 
@@ -44,7 +44,7 @@
 
                 <td><input type="button" name="nine" value="9" onclick="append('9')"></td>
 
-                <td><input type="button" class="operator" name="multiply" value="×" onclick="append('*')"></td>
+                <td><input type="button" class="operator" name="multiply" value="×" onclick="append('*'), begin()"></td>
                 
             </tr>
             <tr>
@@ -53,25 +53,36 @@
 
                 <td><input type="button" name="zero" value="0" onclick="append('0')"></td>
                 
-                <td><input type="button" class="operator" name="multiply" value="x&#x207F;" onclick="append('**')"></td>
+                <td><input type="button" class="operator" name="multiply" value="x&#x207F;" onclick="append('**'), begin()"></td>
                 
-                <td><input type="button" class="operator" name="devide" value="÷" onclick="append('/')"></td>
+                <td><input type="button" class="operator" name="devide" value="÷" onclick="append('/'), begin()"></td>
 
             </tr>
             <tr>
 
-                <td><input class="bottom" id="backspace" type="button" value="⌫" onclick="back('<')"></td>
+                <td><input type="button" name="zero" value="00" onclick="append('00')"></td>
+                
+                <td><input style="font-weight: 100;" type="button" onclick="hundred()" value="%"></td>
 
-                <td><input class="history" type="button" name="his" value="H" onclick="memo()"></td>
+                <td><input id="backspace" type="button" value="⌫" onclick="back('<')"></td>
+
+                <td><input type="button" name="doit" value="=" id="equal" onclick="calculate(), history()"></td>
+
+            </tr>
+            <tr style="width: 267px;">
+
+                <td><input class="bottom" type="button" name="dot" value="." onclick="append('.')"></td>
+
+                <td><input class="bottom" type="button" class="operator" name="devide" value="√" onclick="sqr()"></td>
 
                 <td><input class="bottom" type="button" onclick="negate()" value="+/-"></td>
-
-                <td><input class="bottom" type="button" name="doit" value="=" onclick="calculate(), history()"></td>
 
             </tr>
             <tr>
 
                 <td><p type="text" name="Display" id="displayHistory" disabled></p></td>
+
+                <td><input class="history" type="button" name="his" value="H" id="hist" onclick="screen()"></td>
 
             </tr>
         </table>

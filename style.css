@@ -21,7 +21,7 @@ form {
 #display {
     background: none;
     height: 60px;
-    width: 280px;
+    width: 266px;
     font-size: 30px;
     padding-left: 13px;
     padding-right: 13px;
@@ -70,7 +70,7 @@ form {
     margin-top: 15px;
     background: none;
     height: 45px;
-    width: 350px;
+    width: 238px;
     font-size: 30px;
     padding-top: 4px;
     padding-left: 13px;
@@ -81,6 +81,11 @@ form {
     color: #ffffff;
 	box-shadow: -5px -5px 15px #444, 5px 5px 15px #222, inset 5px 5px 10px #222, inset -5px -5px 10px #444;
     letter-spacing: 2px;
+}
+
+#equal {
+    height: 107px;
+    margin-bottom: -65px;
 }
 
 .clear {
@@ -146,7 +151,11 @@ input:active {
 	text-shadow: 0px 0px 10px #f87a31;
 }
 
+#hist {
+    margin-top: 14px;
+}
+
 .bottom {
-    width: 80px;
+    width: 78px;
     font-weight: 700;
 }
