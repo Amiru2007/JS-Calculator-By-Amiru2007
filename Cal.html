@@ -53,9 +53,20 @@
 
                 <td><input type="button" name="zero" value="0" onclick="append('0')"></td>
                 
-                <td><input type="button" class="operator" name="multiply" value="x&#x207F;" onclick="append('**'), begin()"></td>
+                <td><input type="button" class="operator" name="multiply" value="xʸ" onclick="append('**'), begin()"></td>
                 
                 <td><input type="button" class="operator" name="devide" value="÷" onclick="append('/'), begin()"></td>
+
+            </tr>
+            <tr>
+
+                <td><input type="button" value="log" onclick="log()" /></td>
+                
+                <td><input type="button" value="sin" onclick="sin()"/></td>
+
+                <td><input type="button" value="cos" onclick="cos(degrees)"/></td>
+
+                <td><input type="button" value="tan" onclick="dis('tan($)')"/></td>
 
             </tr>
             <tr>
@@ -70,9 +81,7 @@
 
             </tr>
             <tr style="width: 267px;">
-
-                <td><input class="bottom" type="button" name="dot" value="." onclick="append('.')"></td>
-
+                
                 <td><input class="bottom" type="button" class="operator" name="devide" value="√" onclick="sqr()"></td>
 
                 <td><input class="bottom" type="button" onclick="negate()" value="+/-"></td>

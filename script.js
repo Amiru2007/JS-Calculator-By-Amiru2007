@@ -54,6 +54,33 @@ function clearFields() {
     document.getElementById("display").value=""
 }
 
+function log() {
+    var logarithm1 = document.getElementById("display").value;
+    var logarithm2 = Math.log(logarithm1);
+    document.getElementById("display").value = logarithm2;
+}
+
+function sin() {
+    var sin1 = document.getElementById("display").value;
+    var sin2 = Math.sin(sin1).toFixed(2);
+    document.getElementById("display").value = sin2;
+}
+
+function cos() {
+    var tan =  Math.tan(document.getElementById("display").value * Math.PI / 180);
+    document.getElementById("display").value = tan;
+}
+  
+  console.log(getTanFromDegrees(0));
+  // expected output: 0
+  
+  console.log(getTanFromDegrees(45));
+  // expected output: 0.9999999999999999
+  
+  console.log(getTanFromDegrees(90));
+  // expected output: 16331239353195370
+  
+
 function negate() {
     if (document.getElementById("display").value == "undefined") {
         document.getElementById("display").value=""
