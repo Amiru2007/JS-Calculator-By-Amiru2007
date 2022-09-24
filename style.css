@@ -8,14 +8,27 @@ body {
     background: #333333;
 }
 
+.full {
+    width: 860px;
+    display: flex;
+    justify-content: space-between;
+}
+
 form {
     margin-top: 60px;
     padding: 30px;
     width: fit-content;
     height: fit-content;
+    display: flex;
     background: #333333;
     border-radius: 15px;
 	box-shadow: -5px -5px 15px #444, 5px 5px 15px #222, inset 5px 5px 10px #444, inset -5px -5px 10px #222;
+}
+
+.second:active {
+	box-shadow: -5px -5px 15px #444, 5px 5px 15px #222, inset 5px 5px 10px #222, inset -5px -5px 10px #444;
+	color: yellow;
+	text-shadow: 0px 0px 10px yellow;
 }
 
 #display {
@@ -57,11 +70,6 @@ form {
 	text-shadow: none;
 }
 
-.history {
-    font-size: 30px;
-    font-weight: 700;
-}
-
 .operator {
     font-size: 30px;
 }
@@ -70,7 +78,7 @@ form {
     margin-top: 15px;
     background: none;
     height: 45px;
-    width: 238px;
+    width: 330px;
     font-size: 30px;
     padding-top: 4px;
     padding-left: 13px;
@@ -137,6 +145,7 @@ input:active {
     width: 80px;
     height: 50px;
     margin-top: 6px;
+    margin-bottom: -20px;
     border: none;
     border-radius: 5px;
     font-size: 20px;
@@ -149,10 +158,6 @@ input:active {
 	box-shadow: -5px -5px 15px #444, 5px 5px 15px #222, inset 5px 5px 10px #222, inset -5px -5px 10px #444;
 	color: #ff5e00;
 	text-shadow: 0px 0px 10px #f87a31;
-}
-
-#hist {
-    margin-top: 14px;
 }
 
 .bottom {

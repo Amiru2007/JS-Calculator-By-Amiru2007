@@ -8,94 +8,105 @@
 </head>
 <body>
     <center>
-    <form name ="calculator">
-        <table>
-            <tr>
-                <td colspan="4">
-                    <input type="text" name="Display" id="display" placeholder="0" disabled>
-                    <input class="clear" type="button" onclick="clearFields()" value="C">
-                </td>
-            </tr>
-            <tr>
-                <td><input type="button" name="one" value="1" onclick="append('1')"></td>
+        <form name ="calculator">
+            <table>
+                <tr>
+                    <td colspan="4">
+                        <input type="text" name="Display" id="display" placeholder="0" disabled>
+                        <input class="clear" type="button" onclick="clearFields()" value="C">
+                    </td>
+                </tr>
+                <tr>
+                    <td><input type="button" name="one" value="1" onclick="append('1')"></td>
 
-                <td><input type="button" name="two" value="2" onclick="append('2')"></td>
+                    <td><input type="button" name="two" value="2" onclick="append('2')"></td>
 
-                <td><input type="button" name="three" value="3" onclick="append('3')"></td>
+                    <td><input type="button" name="three" value="3" onclick="append('3')"></td>
 
-                <td><input type="button" class="operator" name="plus" value="+" onclick="append('+'), begin()"></td>
-            </tr>
-            <tr>				
+                    <td><input type="button" class="operator" name="plus" value="+" onclick="append('+'), begin()"></td>
+                </tr>
+                <tr>				
 
-                <td><input type="button" name="four" value="4" onclick="append('4')"></td>
-            
-                <td><input type="button" name="five" value="5" onclick="append('5')"></td>
-
-                <td><input type="button" name="six" value="6" onclick="append('6')"></td>
-
-                <td><input type="button" class="operator" name="substract" value="-" onclick="append('-')"></td>
-            
-            </tr>				
-            <tr>
-
-                <td><input type="button" name="seven" value="7" onclick="append('7')"></td>				
-
-                <td><input type="button" name="eight" value="8" onclick="append('8')"></td>
-
-                <td><input type="button" name="nine" value="9" onclick="append('9')"></td>
-
-                <td><input type="button" class="operator" name="multiply" value="×" onclick="append('*'), begin()"></td>
+                    <td><input type="button" name="four" value="4" onclick="append('4')"></td>
                 
-            </tr>
-            <tr>
+                    <td><input type="button" name="five" value="5" onclick="append('5')"></td>
 
-                <td><input type="button" name="dot" value="." onclick="append('.')"></td>
+                    <td><input type="button" name="six" value="6" onclick="append('6')"></td>
 
-                <td><input type="button" name="zero" value="0" onclick="append('0')"></td>
+                    <td><input type="button" class="operator" name="substract" value="-" onclick="append('-')"></td>
                 
-                <td><input type="button" class="operator" name="multiply" value="xʸ" onclick="append('**'), begin()"></td>
-                
-                <td><input type="button" class="operator" name="devide" value="÷" onclick="append('/'), begin()"></td>
+                </tr>				
+                <tr>
 
-            </tr>
-            <tr>
+                    <td><input type="button" name="seven" value="7" onclick="append('7')"></td>				
 
-                <td><input type="button" value="log" onclick="log()" /></td>
-                
-                <td><input type="button" value="sin" onclick="sin()"/></td>
+                    <td><input type="button" name="eight" value="8" onclick="append('8')"></td>
 
-                <td><input type="button" value="cos" onclick="cos(degrees)"/></td>
+                    <td><input type="button" name="nine" value="9" onclick="append('9')"></td>
 
-                <td><input type="button" value="tan" onclick="dis('tan($)')"/></td>
+                    <td><input type="button" class="operator" name="multiply" value="×" onclick="append('*'), begin()"></td>
+                    
+                </tr>
+                <tr>
 
-            </tr>
-            <tr>
+                    <td><input type="button" name="dot" value="." onclick="append('.')"></td>
 
-                <td><input type="button" name="zero" value="00" onclick="append('00')"></td>
-                
-                <td><input style="font-weight: 100;" type="button" onclick="hundred()" value="%"></td>
+                    <td><input type="button" name="zero" value="0" onclick="append('0')"></td>
+                    
+                    <td><input type="button" name="zero" value="00" onclick="append('00')"></td>
+                    
+                    <td><input type="button" class="operator" name="devide" value="÷" onclick="append('/'), begin()"></td>
 
-                <td><input id="backspace" type="button" value="⌫" onclick="back('<')"></td>
+                </tr>
+                <tr>
 
-                <td><input type="button" name="doit" value="=" id="equal" onclick="calculate(), history()"></td>
+                    <td><input type="button" class="operator" name="multiply" value="xʸ" onclick="append('**'), begin()"></td>
+                    
+                    <td><input style="font-weight: 100;" type="button" onclick="hundred()" value="%"></td>
 
-            </tr>
-            <tr style="width: 267px;">
-                
-                <td><input class="bottom" type="button" class="operator" name="devide" value="√" onclick="sqr()"></td>
+                    <td><input id="backspace" type="button" value="⌫" onclick="back('<')"></td>
 
-                <td><input class="bottom" type="button" onclick="negate()" value="+/-"></td>
+                    <td><input type="button" name="doit" value="=" id="equal" onclick="calculate(), history()"></td>
 
-            </tr>
-            <tr>
+                </tr>
+                <tr style="width: 267px;">
+                    
+                    <td><input class="bottom" type="button" class="operator" name="devide" value="√" onclick="sqr()"></td>
 
-                <td><p type="text" name="Display" id="displayHistory" disabled></p></td>
+                    <td><input class="bottom" type="button" onclick="negate()" value="+/-"></td>
 
-                <td><input class="history" type="button" name="his" value="H" id="hist" onclick="screen()"></td>
+                    <td><input class="bottom" type="button" name="his" value="H" id="hist" onclick="screen()"></td>
 
-            </tr>
-        </table>
-    </form>
+                </tr>
+                <tr>
+
+                    <td><p type="text" name="Display" id="displayHistory" disabled></p></td>
+
+                </tr>
+            </table>
+            <table style="padding-left: 20px;">
+                <tr>
+
+                    <td><input class="second" style="height: 109px; margin-bottom: 10px;" type="button" value="log" onclick="log()" /></td>
+
+                </tr>
+                <tr>
+
+                    <td><input class="second" style="height: 109px; margin-bottom: 10px;" type="button" value="sin" onclick="sin()"/></td>
+                    
+                </tr>
+                <tr>
+
+                    <td><input class="second" style="height: 109px; margin-bottom: 10px;" type="button" value="cos" onclick="cos(degrees)"/></td>
+
+                </tr>
+                <tr>
+
+                    <td><input class="second" style="height: 109px;" type="button" value="tan" onclick="dis('tan($)')"/></td>
+
+                </tr>
+            </table>
+        </form>
     </center>
     <script src="script.js"></script>
 </body>
