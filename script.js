@@ -84,6 +84,11 @@ function exp() {
     var exp2 = Math.exp(exp1);
     document.getElementById("display").value = exp2;
 }
+
+function fi() {
+    var fi = 22 / 7;
+    document.getElementById("display").value = fi;
+}
   
   console.log(getTanFromDegrees(0));
   
