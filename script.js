@@ -23,7 +23,7 @@ function calculate() {
     if (document.getElementById("display").value == "NaN") {
         document.getElementById("displayHistory").innerHTML = none;
     }
-    displayList.push(document.getElementById("display").value + " = " + eval(calculator.display.value));
+    displayList.push(document.getElementById("display").value + " = " + eval(calculator.display.value) + "<br>");
     var list = displayList;
     calculator.display.value = eval(calculator.display.value);
 }
@@ -67,8 +67,16 @@ function sin() {
 }
 
 function cos() {
-    var tan =  Math.tan(document.getElementById("display").value * Math.PI / 180);
-    document.getElementById("display").value = tan;
+    var cos1 = document.getElementById("display").value;
+    var cos2 = 180 / cos1;
+    var cos3 = Math.cos(Math.PI/cos2).toFixed(2);
+    document.getElementById("display").value = cos3;
+}
+
+function tan() {
+    let tan1 = document.getElementById("display").value;
+    let tan2 = tan1 * Math.PI/180; 
+    document.getElementById("display").value = Math.tan(tan2);
 }
   
   console.log(getTanFromDegrees(0));
