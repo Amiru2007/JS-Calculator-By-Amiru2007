@@ -78,6 +78,12 @@ function tan() {
     let tan2 = tan1 * Math.PI/180; 
     document.getElementById("display").value = Math.tan(tan2);
 }
+
+function exp() {
+    var exp1 = document.getElementById("display").value;
+    var exp2 = Math.exp(exp1);
+    document.getElementById("display").value = exp2;
+}
   
   console.log(getTanFromDegrees(0));
   
