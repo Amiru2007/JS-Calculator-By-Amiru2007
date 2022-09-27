@@ -6,11 +6,16 @@ function append(value) {
     calculator.display.value = textValue;
 }
 
-
 function sqr() {
-var square = document.getElementById("display").value;
+    var square = document.getElementById("display").value;
     var answer = Math.sqrt(square);
     document.getElementById("display").value = answer;
+}
+
+function cbr() {
+    var cube1 = document.getElementById("display").value;
+    var cube2 = Math.cbrt(cube1);
+    document.getElementById("display").value = cube2;
 }
 
 const displayList = [];
@@ -89,13 +94,6 @@ function fi() {
     var fi = 22 / 7;
     document.getElementById("display").value = fi;
 }
-  
-  console.log(getTanFromDegrees(0));
-  
-  console.log(getTanFromDegrees(45));
-  
-  console.log(getTanFromDegrees(90));
-  
 
 function negate() {
     if (document.getElementById("display").value == "undefined") {

@@ -78,7 +78,7 @@ form {
     margin-top: 15px;
     background: none;
     height: 45px;
-    width: 330px;
+    width: 236px;
     font-size: 30px;
     padding-top: 4px;
     padding-left: 13px;
@@ -163,4 +163,8 @@ input:active {
 .bottom {
     width: 78px;
     font-weight: 700;
+}
+
+#hist {
+    margin-top: 13px;
 }
