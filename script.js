@@ -116,3 +116,16 @@ function hundred() {
         document.getElementById("display").value = percent;
     }
 }
+
+function oneDivide() {
+    if (document.getElementById("display").value == "undefined") {
+        document.getElementById("display").value=""
+    } else if (document.getElementById("display").value == 0) {
+        document.getElementById("display").value = "Can't divide by zero";
+    } else {
+        onedivi1 = 1;
+        onedivi2 = document.getElementById("display").value;
+        onediviAns = onedivi1 / onedivi2;
+        document.getElementById("display").value = onediviAns;
+    }
+}

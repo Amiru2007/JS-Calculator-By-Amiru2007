@@ -4,6 +4,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -78,43 +80,51 @@
                     <td><input class="bottom" type="button" onclick="negate()" value="+/-"></td>
 
                 </tr>
+                <tr style="width: 267px;">
+
+                    <td><input class="bottom" type="button" class="operator" name="devide" value="¹/ₓ" onclick="oneDivide()"></td>
+
+                </tr>
                 <tr>
 
                     <td><p type="text" name="Display" id="displayHistory" disabled></p></td>
-
-                    <td><input class="bottom" type="button" name="his" value="H" id="hist" onclick="screen()"></td>
 
                 </tr>
             </table>
             <table style="padding-left: 20px;">
                 <tr>
 
-                    <td><input class="second" style="height: 66px; margin-bottom: 10px;" type="button" value="log" onclick="log()" /></td>
+                    <td><input class="second" style="height: 66px; margin-bottom: 8px;" type="button" value="log" onclick="log()" /></td>
 
                 </tr>
                 <tr>
 
-                    <td><input class="second" style="height: 67px; margin-bottom: 10px;" type="button" value="sin" onclick="sin()"/></td>
+                    <td><input class="second" style="height: 67px; margin-bottom: 8px;" type="button" value="sin" onclick="sin()"/></td>
                     
                 </tr>
                 <tr>
 
-                    <td><input class="second" style="height: 67px; margin-bottom: 10px;" type="button" value="cos" onclick="cos()"/></td>
+                    <td><input class="second" style="height: 67px; margin-bottom: 8px;" type="button" value="cos" onclick="cos()"/></td>
 
                 </tr>
                 <tr>
 
-                    <td><input class="second" style="height: 67px; margin-bottom: 10px;" type="button" value="tan" onclick="tan()"/></td>
+                    <td><input class="second" style="height: 67px; margin-bottom: 8px;" type="button" value="tan" onclick="tan()"/></td>
 
                 </tr>
                 <tr>
 
-                    <td><input class="second" style="height: 67px; margin-bottom: 10px;" type="button" value="EXP" onclick="exp()"/></td>
+                    <td><input class="second" style="height: 67px; margin-bottom: 9px;" type="button" value="EXP" onclick="exp()"/></td>
 
                 </tr>
                 <tr>
 
-                    <td><input class="second" style="height: 66px; margin-bottom: 10px;" type="button" value="π" onclick="fi()"/></td>
+                    <td><input class="second" style="height: 66px; margin-bottom: 8px;" type="button" value="π" onclick="fi()"/></td>
+
+                </tr>
+                <tr>
+
+                    <td><input class="bottom" type="button" name="his" value="H" id="hist" onclick="screen()"></td>
 
                 </tr>
             </table>
