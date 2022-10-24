@@ -28,7 +28,21 @@ function calculate() {
     if (document.getElementById("display").value == "NaN") {
         document.getElementById("displayHistory").innerHTML = none;
     }
-    displayList.push(document.getElementById("display").value + " = " + eval(calculator.display.value) + "<br>");
+    if (document.getElementById("display").value == "") {
+        displayList.push("");
+    } else if (document.getElementById("display").value == "undefined") {
+        displayList.push("");
+    } else {
+        if (displayList.length === 0) {
+            displayList.push(document.getElementById("display").value + " = " + eval(calculator.display.value) + "<br>");
+        } else if (displayList.length > 0) {
+            displayList.push(document.getElementById("display").value + " = " + eval(calculator.display.value) + "<br>");
+        } else if (displayList.length === 6) {
+            let removes = 1;
+            displayList.splice(removes,1);
+            displayList.push(document.getElementById("display").value + " = " + eval(calculator.display.value) + "<br>");
+        }
+    }
     var list = displayList;
     calculator.display.value = eval(calculator.display.value);
     return list;
@@ -48,8 +62,7 @@ function screen() {
     if (document.getElementById("display").value == "undefined") {
         document.getElementById("displayHistory").innerHTML = none;
     }
-    document.getElementById("displayHistory").innerHTML = list;
-	document.getElementById("displayHistory").textContent = array.join(" ");
+    document.getElementById("displayHistory").innerHTML = list.join("");
 }
 
 function memo() {
