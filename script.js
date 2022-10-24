@@ -31,6 +31,14 @@ function calculate() {
     displayList.push(document.getElementById("display").value + " = " + eval(calculator.display.value) + "<br>");
     var list = displayList;
     calculator.display.value = eval(calculator.display.value);
+    return list;
+}
+
+function array() {
+    var mylist = document.getElementById("myList");
+    var x = document.getElementById("mySelect").value;
+    document.getElementById("mySelect").value="";
+    document.getElementById("myselect").value = "mylist";
 }
 
 function screen() {
@@ -41,6 +49,7 @@ function screen() {
         document.getElementById("displayHistory").innerHTML = none;
     }
     document.getElementById("displayHistory").innerHTML = list;
+	document.getElementById("displayHistory").textContent = array.join(" ");
 }
 
 function memo() {
@@ -61,7 +70,7 @@ function clearFields() {
 
 function log() {
     var logarithm1 = document.getElementById("display").value;
-    var logarithm2 = Math.log(logarithm1);
+    var logarithm2 = Math.log10(logarithm1);
     document.getElementById("display").value = logarithm2;
 }
 

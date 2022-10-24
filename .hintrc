@@ -1,0 +1,27 @@
+{
+  "extends": [
+    "development"
+  ],
+  "browserslist": [
+    "defaults",
+    "not ie 11",
+    "not and_ff <= 105",
+    "not firefox <= 105"
+  ],
+  "hints": {
+    "compat-api/css": [
+      "default",
+      {
+        "ignore": [
+          "height: fit-content"
+        ]
+      }
+    ],
+    "axe/forms": [
+      "default",
+      {
+        "select-name": "off"
+      }
+    ]
+  }
+}

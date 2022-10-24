@@ -13,7 +13,6 @@ body {
 }
 
 form {
-    margin-top: 60px;
     padding: 30px;
     width: fit-content;
     height: fit-content;
@@ -165,4 +164,25 @@ input:active {
 
 #hist {
     margin-top: 7px;
+}
+
+#myList {
+    margin-top: 15px;
+    background: none;
+    height: 45px;
+    width: 333px;
+    font-size: 30px;
+    padding-top: 4px;
+    padding-left: 13px;
+    padding-right: 13px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    text-align: left;
+    color: #ffffff;
+	box-shadow: -5px -5px 15px #444, 5px 5px 15px #222, inset 5px 5px 10px #222, inset -5px -5px 10px #444;
+    letter-spacing: 2px;
+}
+
+#log10 {
+    font-size: 17px;
 }
