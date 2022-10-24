@@ -14,10 +14,3 @@ GitHub &nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp; https://github.com/Amiru2007
 Medium &nbsp;&nbsp;-&nbsp;&nbsp; https://medium.com/@amiru.upek.weerathunga
 
 Dev &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp; https://dev.to/amiruweerathunga
-
-<p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="JjvWZwz" data-user="Amiru-Weerathunga" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-  <span>See the Pen <a href="https://codepen.io/Amiru-Weerathunga/pen/JjvWZwz">
-  HTML CSS JS Calculator by Amiru Weerathunga</a> by Amiru Weerathunga  (<a href="https://codepen.io/Amiru-Weerathunga">@Amiru-Weerathunga</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
