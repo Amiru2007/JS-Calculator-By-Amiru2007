@@ -77,7 +77,8 @@ form {
     height: 45px;
     width: 333px;
     font-size: 30px;
-    padding-top: 4px;
+    line-height: 45px;
+    padding-top: 0px;
     padding-left: 13px;
     padding-right: 13px;
     border-radius: 5px;
@@ -185,4 +186,8 @@ input:active {
 
 #log10 {
     font-size: 17px;
+}
+
+.clearhis {
+    font-weight: 900;
 }

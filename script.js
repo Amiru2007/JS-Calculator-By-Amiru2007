@@ -81,6 +81,12 @@ function clearFields() {
     document.getElementById("display").value=""
 }
 
+function clearHis() {
+    displayList.length = 0;
+    var list = displayList;
+    document.getElementById("displayHistory").innerHTML = list;
+}
+
 function log() {
     var logarithm1 = document.getElementById("display").value;
     var logarithm2 = Math.log10(logarithm1);
