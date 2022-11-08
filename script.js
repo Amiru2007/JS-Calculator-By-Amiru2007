@@ -62,7 +62,8 @@ function screen() {
     if (document.getElementById("display").value == "undefined") {
         document.getElementById("displayHistory").innerHTML = none;
     }
-    document.getElementById("displayHistory").innerHTML = list.join("");
+    var show = displayList[displayList.length - 1];
+    document.getElementById("displayHistory").innerHTML = show;
 }
 
 function memo() {
@@ -156,4 +157,12 @@ function oneDivide() {
         onediviAns = onedivi1 / onedivi2;
         document.getElementById("display").value = onediviAns;
     }
+}
+
+function down() {
+    var count = document.getElementById("displayHistory").value;
+    var index = displayList.indexOf(count);
+    var next = index - 1;
+    var show = displayList[next];
+    document.getElementById("displayHistory").innerHTML = show;
 }
