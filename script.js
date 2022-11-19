@@ -18,7 +18,7 @@ function cbr() {
     document.getElementById("display").value = cube2;
 }
 
-const displayList = [];
+const displayList = [10];
 var list = displayList;
 
 function calculate() {
@@ -161,8 +161,11 @@ function oneDivide() {
 
 function down() {
     var count = document.getElementById("displayHistory").value;
+    if (displayList.length === 0) {
+        document.getElementById("displayHistory").innerHTML = none;
+    }
     var index = displayList.indexOf(count);
-    var next = index - 1;
+    var next = index + 1;
     var show = displayList[next];
     document.getElementById("displayHistory").innerHTML = show;
 }
