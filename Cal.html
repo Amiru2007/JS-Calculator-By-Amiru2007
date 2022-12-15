@@ -11,6 +11,13 @@
 <body>
     <center>
         <form name ="calculator">
+            <table style="padding-right: 25px;">
+                <tr>
+
+                    <td><p type="text" name="Display" id="displayHistory" disabled></p></td>
+
+                </tr>
+            </table>
             <table>
                 <tr>
                     <td colspan="4">
@@ -87,18 +94,6 @@
                     <td><input class="clearhis" type="button" onclick="clearHis()" value="CH"></td>
 
                     <td><input class="bottom" type="button" name="his" value="H" id="hist" onclick="screen()"></td>
-
-                </tr>
-                <tr>
-
-                    <td><p type="text" name="Display" id="displayHistory" disabled></p></td>
-                    <select id="myList" onchange="array()">
-                        <option id="one">One</option>
-                        <option id="two">Two</option>
-                        <option id="thr">Thr</option>
-                        <option id="fou">Fou</option>
-                        <option id="fiv">Fiv</option>
-                    </select>
 
                 </tr>
             </table>

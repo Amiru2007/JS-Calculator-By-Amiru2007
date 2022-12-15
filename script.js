@@ -18,7 +18,7 @@ function cbr() {
     document.getElementById("display").value = cube2;
 }
 
-const displayList = [10];
+const displayList = [];
 var list = displayList;
 
 function calculate() {
@@ -45,7 +45,8 @@ function calculate() {
     }
     var list = displayList;
     calculator.display.value = eval(calculator.display.value);
-    return list;
+    const finalArray = displayList.join(" ");
+    document.getElementById("displayHistory").innerHTML = finalArray;
 }
 
 function array() {
@@ -62,8 +63,7 @@ function screen() {
     if (document.getElementById("display").value == "undefined") {
         document.getElementById("displayHistory").innerHTML = none;
     }
-    var show = displayList[displayList.length - 1];
-    document.getElementById("displayHistory").innerHTML = show;
+    document.getElementById("displayHistory").innerHTML = displayList;
 }
 
 function memo() {

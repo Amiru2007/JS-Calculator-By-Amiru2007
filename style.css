@@ -1,5 +1,7 @@
+@import url(https://fonts.googleapis.com/css2?family=Dosis:wght@400;700&amp;display=swap);
+
 * {
-    font-family: 'Dosis', sans-serif;
+    font-family: monospace;
 }
 
 body {
@@ -72,9 +74,9 @@ form {
 }
 
 #displayHistory {
-    margin-top: 15px;
+    margin-top: 8px;
     background: none;
-    height: 45px;
+    height: 555px;
     width: 333px;
     font-size: 30px;
     line-height: 45px;
