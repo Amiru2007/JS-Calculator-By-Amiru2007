@@ -21,7 +21,7 @@
             <table>
                 <tr>
                     <td colspan="4">
-                        <input type="text" name="Display" id="display" placeholder="0" disabled>
+                        <input type="text" name="Display" id="display" placeholder="0" oninput="checkInput()" disabled>
                         <input class="clear" type="button" onclick="clearFields()" value="C">
                     </td>
                 </tr>
@@ -145,8 +145,7 @@
                 </tr>
             </table>
         </form>
-        
-  <button id="toggle-btn">Switch to Dark Mode</button>
+    <button id="toggle-btn">Switch to Dark Mode</button>
     </center>
     <script src="script.js"></script>
 </body>

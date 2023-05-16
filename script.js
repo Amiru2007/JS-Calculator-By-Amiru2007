@@ -10,12 +10,18 @@ function sqr() {
     var square = document.getElementById("display").value;
     var answer = Math.sqrt(square);
     document.getElementById("display").value = answer;
+    displayList.push(square + "**(½)"  + " = " + answer + "<br>");
+    const finalArray = displayList.join(" ");
+    document.getElementById("displayHistory").innerHTML = finalArray;
 }
 
 function cbr() {
-    var cube1 = document.getElementById("display").value;
-    var cube2 = Math.cbrt(cube1);
-    document.getElementById("display").value = cube2;
+    var cube = document.getElementById("display").value;
+    var answer = Math.cbrt(cube);
+    document.getElementById("display").value = answer;
+    displayList.push(cube + "**(½)"  + " = " + answer + "<br>");
+    const finalArray = displayList.join(" ");
+    document.getElementById("displayHistory").innerHTML = finalArray;
 }
 
 const displayList = [];
@@ -24,11 +30,9 @@ var list = displayList;
 function calculate() {
     if (document.getElementById("display").value == "NaN") {
         document.getElementById("displayHistory").innerHTML = none;
-    }
-    if (document.getElementById("display").value == "NaN") {
+    } else if (document.getElementById("display").value == "NaN") {
         document.getElementById("displayHistory").innerHTML = none;
-    }
-    if (document.getElementById("display").value == "") {
+    } else if (document.getElementById("display").value == "") {
         displayList.push("");
     } else if (document.getElementById("display").value == "undefined") {
         displayList.push("");
@@ -98,6 +102,9 @@ function log() {
     var logarithm1 = document.getElementById("display").value;
     var logarithm2 = Math.log10(logarithm1);
     document.getElementById("display").value = logarithm2;
+    displayList.push("lg" + logarithm1 + " = " + logarithm2 + "<br>");
+    const finalArray = displayList.join(" ");
+    document.getElementById("displayHistory").innerHTML = finalArray;
 }
 
 function sin() {
@@ -187,4 +194,22 @@ toggleBtn.addEventListener('click', () => {
   } else {
     toggleBtn.innerHTML = 'Switch to Dark Mode';
   }
+});
+
+// Get a reference to the disabled input element
+var display = document.getElementById('display');
+
+// Add event listener for paste event on the document
+document.addEventListener('paste', function(event) {
+    // Get the pasted text
+    var pastedText = (event.clipboardData || window.clipboardData).getData('text');
+
+    // Check if the pasted text represents a number
+    if (!isNaN(pastedText)) {
+        // Append the pasted text to the existing value of the disabled input
+        display.value += pastedText;
+    }
+
+    // Prevent the default paste behavior
+    event.preventDefault();
 });

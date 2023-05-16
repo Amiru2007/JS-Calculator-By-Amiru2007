@@ -78,6 +78,7 @@ form {
 
 #display:active {
 	text-shadow: none;
+    color: var(--text-color);
 }
 
 .memoDisplay {
@@ -111,7 +112,7 @@ form {
     padding-right: 13px;
     border-radius: 5px;
     margin-bottom: 15px;
-    overflow: hidden;
+    overflow: auto;
     text-align: left;
 	box-shadow: -5px -5px 15px var(--color-444), 3px 3px 9px var(--color-222), inset 3px 3px 6px var(--color-222), inset -3px -3px 6px var(--color-444);
     letter-spacing: 2px;
@@ -152,6 +153,7 @@ input, .dark-light {
     border: none;
     border-radius: 5px;
     font-size: 20px;
+    text-overflow: ellipsis;
 	box-shadow: -5px -5px 15px var(--color-444), 3px 3px 9px var(--color-222), inset 3px 3px 6px var(--color-444), inset -3px -3px 6px var(--color-222);
 }
 
