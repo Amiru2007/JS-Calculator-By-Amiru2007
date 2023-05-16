@@ -1,11 +1,41 @@
-@import url(https://fonts.googleapis.com/css2?family=Dosis:wght@400;700&amp;display=swap);
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --bg-color: #e0e0e0;
+    --text-color: #333333;
+    --color-222: #bebebe;
+    --color-444: #ffffff;
+    --click-color: #0074D9;
+    --click-color-dark: #0074D9;
+}
+  
+.dark {
+    --bg-color: #27292f;
+    --text-color: #f8f8f8;
+    --color-222: #212328;
+    --color-444: #2d2f36;
+}
 
 * {
-    font-family: monospace;
+    font-family: 'Barlow', sans-serif;
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
 }
 
 body {
-    background: #333333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .full {
@@ -16,42 +46,41 @@ body {
 
 form {
     padding: 30px;
+    width: -moz-fit-content;
     width: fit-content;
     height: fit-content;
     display: flex;
-    background: #333333;
     border-radius: 15px;
-	box-shadow: -5px -5px 15px #444, 5px 5px 15px #222, inset 5px 5px 10px #444, inset -5px -5px 10px #222;
+	box-shadow: -5px -5px 15px var(--color-444), 3px 3px 9px var(--color-222), inset 3px 3px 6px var(--color-444), inset -3px -3px 6px var(--color-222);
+}
+
+.second {
+    font-weight: 600;
 }
 
 .second:active {
-	box-shadow: -5px -5px 15px #444, 5px 5px 15px #222, inset 5px 5px 10px #222, inset -5px -5px 10px #444;
-	color: yellow;
-	text-shadow: 0px 0px 10px yellow;
+	box-shadow: -5px -5px 15px var(--color-444), 3px 3px 9px var(--color-222), inset 3px 3px 6px var(--color-222), inset -3px -3px 6px var(--color-444);
+	color: var(--click-color-dark);
 }
 
 #display {
-    background: none;
     height: 60px;
-    width: 266px;
+    width: 289px;
     font-size: 30px;
     padding-left: 13px;
     padding-right: 13px;
     border-radius: 5px;
     margin-bottom: 15px;
     text-align: right;
-    color: #ffffff;
-	box-shadow: -5px -5px 15px #444, 5px 5px 15px #222, inset 5px 5px 10px #222, inset -5px -5px 10px #444;
+	box-shadow: -5px -5px 15px var(--color-444), 3px 3px 9px var(--color-222), inset 3px 3px 6px var(--color-222), inset -3px -3px 6px var(--color-444);
     letter-spacing: 2px;
 }
 
 #display:active {
-	color: #ffffff;
 	text-shadow: none;
 }
 
 .memoDisplay {
-    background: none;
     height: 40px;
     width: 350px;
     font-size: 30px;
@@ -59,13 +88,11 @@ form {
     border-radius: 5px;
     margin-bottom: 15px;
     text-align: right;
-    color: #ffffff;
-	box-shadow: -5px -5px 15px #444, 5px 5px 15px #222, inset 5px 5px 10px #222, inset -5px -5px 10px #444;
+	box-shadow: -5px -5px 15px var(--color-444), 3px 3px 9px var(--color-222), inset 3px 3px 6px var(--color-222), inset -3px -3px 6px var(--color-444);
     letter-spacing: 2px;
 }
 
 .memoDisplay:active {
-	color: #ffffff;
 	text-shadow: none;
 }
 
@@ -75,7 +102,6 @@ form {
 
 #displayHistory {
     margin-top: 8px;
-    background: none;
     height: 555px;
     width: 333px;
     font-size: 30px;
@@ -85,19 +111,18 @@ form {
     padding-right: 13px;
     border-radius: 5px;
     margin-bottom: 15px;
+    overflow: hidden;
     text-align: left;
-    color: #ffffff;
-	box-shadow: -5px -5px 15px #444, 5px 5px 15px #222, inset 5px 5px 10px #222, inset -5px -5px 10px #444;
+	box-shadow: -5px -5px 15px var(--color-444), 3px 3px 9px var(--color-222), inset 3px 3px 6px var(--color-222), inset -3px -3px 6px var(--color-444);
     letter-spacing: 2px;
 }
 
 #equal {
-    height: 166px;
-    margin-bottom: -124px;
+    height: 227px;
+    margin-bottom: -264px;
 }
 
 .clear {
-    background: none;
     height: 60px;
     width: 80px;
     font-size: 30px;
@@ -106,15 +131,13 @@ form {
     margin-left: 10px;
     margin-bottom: 5px;
     text-align: center;
-    color: #ffffff;
-	box-shadow: -5px -5px 15px #444, 5px 5px 15px #222, inset 5px 5px 10px #444, inset -5px -5px 10px #222;
+	box-shadow: -5px -5px 15px var(--color-444), 3px 3px 9px var(--color-222), inset 3px 3px 6px var(--color-444), inset -3px -3px 6px var(--color-222);
     font-weight: 700;
 }
 
 .clear:active {
-	box-shadow: -5px -5px 15px #444, 5px 5px 15px #222, inset 5px 5px 10px #222, inset -5px -5px 10px #444;
-	color: #ff5e00;
-	text-shadow: 0px 0px 10px #f87a31;
+	box-shadow: -5px -5px 15px var(--color-444), 3px 3px 9px var(--color-222), inset 3px 3px 6px var(--color-222), inset -3px -3px 6px var(--color-444);
+	color: var(--click-color);
 }
 
 tr {
@@ -122,26 +145,22 @@ tr {
     justify-content: space-between;
 }
 
-input {
-    background: #333;
+input, .dark-light {
     width: 80px;
-    height: 50px;
-    margin-top: 6px;
+    height: 45px;
+    margin: 8px;
     border: none;
     border-radius: 5px;
     font-size: 20px;
-	box-shadow: -5px -5px 15px #444, 5px 5px 15px #222, inset 5px 5px 10px #444, inset -5px -5px 10px #222;
-	color: #fff;
+	box-shadow: -5px -5px 15px var(--color-444), 3px 3px 9px var(--color-222), inset 3px 3px 6px var(--color-444), inset -3px -3px 6px var(--color-222);
 }
 
-input:active {
-	box-shadow: -5px -5px 15px #444, 5px 5px 15px #222, inset 5px 5px 10px #222, inset -5px -5px 10px #444;
-	color: #ff5e00;
-	text-shadow: 0px 0px 10px #f87a31;
+input:active, .dark-light:active {
+	box-shadow: -5px -5px 15px var(--color-444), 3px 3px 9px var(--color-222), inset 3px 3px 6px var(--color-222), inset -3px -3px 6px var(--color-444);
+	color: var(--click-color);
 }
 
 #backspace {
-    background: #333;
     width: 80px;
     height: 50px;
     margin-top: 6px;
@@ -149,15 +168,13 @@ input:active {
     border: none;
     border-radius: 5px;
     font-size: 20px;
-	box-shadow: -5px -5px 15px #444, 5px 5px 15px #222, inset 5px 5px 10px #444, inset -5px -5px 10px #222;
-	color: #fff;
+	box-shadow: -5px -5px 15px var(--color-444), 3px 3px 9px var(--color-222), inset 3px 3px 6px var(--color-444), inset -3px -3px 6px var(--color-222);
     font-weight: 700;
 }
 
 #backspace:active {
-	box-shadow: -5px -5px 15px #444, 5px 5px 15px #222, inset 5px 5px 10px #222, inset -5px -5px 10px #444;
-	color: #ff5e00;
-	text-shadow: 0px 0px 10px #f87a31;
+	box-shadow: -5px -5px 15px var(--color-444), 3px 3px 9px var(--color-222), inset 3px 3px 6px var(--color-222), inset -3px -3px 6px var(--color-444);
+	color: var(--click-color);
 }
 
 .bottom {
@@ -171,7 +188,6 @@ input:active {
 
 #myList {
     margin-top: 15px;
-    background: none;
     height: 45px;
     width: 333px;
     font-size: 30px;
@@ -181,13 +197,8 @@ input:active {
     border-radius: 5px;
     margin-bottom: 15px;
     text-align: left;
-    color: #ffffff;
-	box-shadow: -5px -5px 15px #444, 5px 5px 15px #222, inset 5px 5px 10px #222, inset -5px -5px 10px #444;
+	box-shadow: -5px -5px 15px var(--color-444), 3px 3px 9px var(--color-222), inset 3px 3px 6px var(--color-222), inset -3px -3px 6px var(--color-444);
     letter-spacing: 2px;
-}
-
-#log10 {
-    font-size: 17px;
 }
 
 .clearhis {

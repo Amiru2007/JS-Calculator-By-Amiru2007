@@ -82,6 +82,12 @@ function clearFields() {
     document.getElementById("display").value=""
 }
 
+function clearHisAlert() {
+    if (confirm("Are you sure you want to clear history?")) {
+      clearHis();
+    }
+}
+
 function clearHis() {
     displayList.length = 0;
     var list = displayList;
@@ -127,22 +133,24 @@ function fi() {
 function negate() {
     if (document.getElementById("display").value == "undefined") {
         document.getElementById("display").value=""
+    } else if (document.getElementById("display").value == "") {
+        document.getElementById("display").value=""
     } else {
         num1 = document.getElementById("display").value;
         num2 = -1;
         negated = num1 * num2
-        document.getElementById("display").value = negated
+        document.getElementById("display").value = num1 + "*" + num2;
     }
 }
 
 function hundred() {
     if (document.getElementById("display").value == "undefined") {
         document.getElementById("display").value=""
+    } else if (document.getElementById("display").value == "") {
+        document.getElementById("display").value=""
     } else {
         value1 = document.getElementById("display").value;
-        value2 = 100;
-        percent = value1 / value2;
-        document.getElementById("display").value = percent;
+        document.getElementById("display").value = value1 + "/" + 100;
     }
 }
 
@@ -152,10 +160,9 @@ function oneDivide() {
     } else if (document.getElementById("display").value == 0) {
         document.getElementById("display").value = "Can't divide by zero";
     } else {
-        onedivi1 = 1;
-        onedivi2 = document.getElementById("display").value;
-        onediviAns = onedivi1 / onedivi2;
-        document.getElementById("display").value = onediviAns;
+        onedivi = document.getElementById("display").value;
+        document.getElementById("display").value = ""
+        document.getElementById("display").value = 1 + "/" + onedivi;
     }
 }
 
@@ -169,3 +176,15 @@ function down() {
     var show = displayList[next];
     document.getElementById("displayHistory").innerHTML = show;
 }
+
+const toggleBtn = document.getElementById('toggle-btn');
+const body = document.body;
+
+toggleBtn.addEventListener('click', () => {
+  body.classList.toggle('dark');
+  if (body.classList.contains('dark')) {
+    toggleBtn.innerHTML = 'Switch to Light Mode';
+  } else {
+    toggleBtn.innerHTML = 'Switch to Dark Mode';
+  }
+});

@@ -58,7 +58,7 @@
                 </tr>
                 <tr>
 
-                    <td><input type="button" name="dot" value="." onclick="append('.')"></td>
+                    <td><input type="button" name="dot" value="&#x2022;" onclick="append('.')"></td>
 
                     <td><input type="button" name="zero" value="0" onclick="append('0')"></td>
                     
@@ -71,27 +71,37 @@
 
                     <td><input type="button" class="operator" name="multiply" value="xʸ" onclick="append('**'), begin()"></td>
                     
-                    <td><input style="font-weight: 100;" type="button" onclick="hundred()" value="%"></td>
+                    <td><input style="font-weight: 700;" type="button" value="%" onclick="hundred()"></td>
 
-                    <td><input id="backspace" type="button" value="⌫" onclick="back('<')"></td>
+                    <td><input id="backspace" type="button" value="⇽" onclick="back('<')"></td>
 
                     <td><input type="button" name="doit" value="=" id="equal" onclick="calculate(), history()"></td>
 
                 </tr>
-                <tr style="width: 267px;">
-                    
-                    <td><input class="bottom" type="button" class="operator" name="devide" value="√" onclick="sqr()"></td>
+                <tr style="width: 75%;">
 
-                    <td><input class="bottom" type="button" class="operator" name="devide" value="∛" onclick="cbr()"></td>
+                    <td><input class="bottom" type="button" name="dot" value="&lpar;" onclick="append('&lpar;')"></td>
+                    
+                    <td><input class="bottom" type="button" value="𝜋" onclick="append('22/7')"/></td>
+
+                    <td><input class="bottom" type="button" name="dot" value="&rpar;" onclick="append('&rpar;')"></td>
+
+
+                </tr>
+                <tr style="width: 75%;">
+                    
+                    <td><input class="bottom" type="button" class="operator" name="devide" value="²√" onclick="sqr()"></td>
+
+                    <td><input class="bottom" type="button" class="operator" name="devide" value="³√" onclick="cbr()"></td>
 
                     <td><input class="bottom" type="button" onclick="negate()" value="+/-"></td>
 
                 </tr>
-                <tr style="width: 267px;">
+                <tr style="width: 75%;">
 
                     <td><input class="bottom" type="button" class="operator" name="devide" value="¹/ₓ" onclick="oneDivide()"></td>
 
-                    <td><input class="clearhis" type="button" onclick="clearHis()" value="CH"></td>
+                    <td><input class="clearhis" type="button" onclick="clearHisAlert()" value="CH"></td>
 
                     <td><input class="bottom" type="button" name="his" value="H" id="hist" onclick="screen()"></td>
 
@@ -100,7 +110,7 @@
             <table style="padding-left: 20px;">
                 <tr>
 
-                    <td><input class="second" style="height: 66px; margin-bottom: 8px;" type="button" value="log(10)" onclick="log()" id="log10"/></td>
+                    <td><input class="second" style="height: 66px; margin-bottom: 8px;" type="button" value="lg" onclick="log()" id="log10"/></td>
 
                 </tr>
                 <tr>
@@ -125,7 +135,7 @@
                 </tr>
                 <tr>
 
-                    <td><input class="second" style="height: 66px; margin-bottom: 8px;" type="button" value="π" onclick="fi()"/></td>
+                    <td><input class="second" style="height: 66px; margin-bottom: 8px;" type="button" value="π" onclick="append('22/7')"/></td>
 
                 </tr>
                 <tr>
@@ -135,6 +145,8 @@
                 </tr>
             </table>
         </form>
+        
+  <button id="toggle-btn">Switch to Dark Mode</button>
     </center>
     <script src="script.js"></script>
 </body>
