@@ -10,7 +10,7 @@ function sqr() {
     var square = document.getElementById("display").value;
     var answer = Math.sqrt(square);
     document.getElementById("display").value = answer;
-    displayList.push(square + "**(½)"  + " = " + answer + "<br>");
+    displayList.push(square + "**(½)"  + " = " + answer);
     const finalArray = displayList.join(" ");
     document.getElementById("displayHistory").innerHTML = finalArray;
 }
@@ -19,7 +19,7 @@ function cbr() {
     var cube = document.getElementById("display").value;
     var answer = Math.cbrt(cube);
     document.getElementById("display").value = answer;
-    displayList.push(cube + "**(½)"  + " = " + answer + "<br>");
+    displayList.push(cube + "**(½)"  + " = " + answer);
     const finalArray = displayList.join(" ");
     document.getElementById("displayHistory").innerHTML = finalArray;
 }
@@ -38,19 +38,19 @@ function calculate() {
         displayList.push("");
     } else {
         if (displayList.length === 0) {
-            displayList.push(document.getElementById("display").value + " = " + eval(calculator.display.value) + "<br>");
+            displayList.push(document.getElementById("display").value + " = " + eval(calculator.display.value));
         } else if (displayList.length > 0) {
-            displayList.push(document.getElementById("display").value + " = " + eval(calculator.display.value) + "<br>");
+            displayList.push(document.getElementById("display").value + " = " + eval(calculator.display.value));
         } else if (displayList.length === 6) {
             let removes = 1;
             displayList.splice(removes,1);
-            displayList.push(document.getElementById("display").value + " = " + eval(calculator.display.value) + "<br>");
+            displayList.push(document.getElementById("display").value + " = " + eval(calculator.display.value));
         }
     }
     var list = displayList;
     calculator.display.value = eval(calculator.display.value);
-    const finalArray = displayList.join(" ");
-    document.getElementById("displayHistory").innerHTML = finalArray;
+    var lastItem = displayList[displayList.length - 1];
+    document.getElementById("displayHistory").innerHTML = lastItem;
 }
 
 function array() {
@@ -102,7 +102,7 @@ function log() {
     var logarithm1 = document.getElementById("display").value;
     var logarithm2 = Math.log10(logarithm1);
     document.getElementById("display").value = logarithm2;
-    displayList.push("lg" + logarithm1 + " = " + logarithm2 + "<br>");
+    displayList.push("lg" + logarithm1 + " = " + logarithm2);
     const finalArray = displayList.join(" ");
     document.getElementById("displayHistory").innerHTML = finalArray;
 }
@@ -213,3 +213,30 @@ document.addEventListener('paste', function(event) {
     // Prevent the default paste behavior
     event.preventDefault();
 });
+
+var currentItemIndex = displayList.length - 1;
+var itemDisplay = document.getElementById('displayHistory');
+var prevButton = document.getElementById('prevButton');
+var nextButton = document.getElementById('nextButton');
+
+function displayItem(index) {
+    itemDisplay.textContent = displayList[index];
+}
+
+function showPreviousItem() {
+    if (displayList.length <= 1) {
+        return;
+    }
+    currentItemIndex = (currentItemIndex - 1 + displayList.length) % displayList.length;
+    displayItem(currentItemIndex);
+}
+
+function showNextItem() {
+    if (displayList.length <= 1) {
+        return;
+    }
+    currentItemIndex = (currentItemIndex + 1) % displayList.length;
+    displayItem(currentItemIndex);
+}
+
+displayItem(currentItemIndex);
