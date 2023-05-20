@@ -3,10 +3,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Calculator</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/de6203fbaf.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <center>
@@ -32,7 +33,7 @@
 
                     <td><input type="button" name="three" value="3" onclick="append('3')"></td>
 
-                    <td><input type="button" class="operator" name="plus" value="+" onclick="append('+'), begin()"></td>
+                    <td><input type="button" class="operator" name="plus" value="+" onclick="appendOperator('+'), begin()"></td>
                 </tr>
                 <tr>				
 
@@ -42,7 +43,7 @@
 
                     <td><input type="button" name="six" value="6" onclick="append('6')"></td>
 
-                    <td><input type="button" class="operator" name="substract" value="-" onclick="append('-')"></td>
+                    <td><input type="button" class="operator" name="substract" value="-" onclick="appendOperator('-')"></td>
                 
                 </tr>				
                 <tr>
@@ -53,7 +54,7 @@
 
                     <td><input type="button" name="nine" value="9" onclick="append('9')"></td>
 
-                    <td><input type="button" class="operator" name="multiply" value="×" onclick="append('*'), begin()"></td>
+                    <td><input type="button" class="operator" name="multiply" value="×" onclick="appendOperator('*'), begin()"></td>
                     
                 </tr>
                 <tr>
@@ -62,14 +63,14 @@
 
                     <td><input type="button" name="zero" value="0" onclick="append('0')"></td>
                     
-                    <td><input type="button" name="zero" value="00" onclick="append('00')"></td>
+                    <td><input type="button" name="doubleZero" value="00" onclick="append('00')"></td>
                     
-                    <td><input type="button" class="operator" name="devide" value="÷" onclick="append('/'), begin()"></td>
+                    <td><input type="button" class="operator" id="operator" name="devide" value="÷" onclick="appendOperator('/'), begin(this.id)"></td>
 
                 </tr>
                 <tr>
 
-                    <td><input type="button" class="operator" name="multiply" value="xʸ" onclick="append('**'), begin()"></td>
+                    <td><input type="button" class="operator" name="multiply" value="xʸ" onclick="appendOperator('**'), begin()"></td>
                     
                     <td><input style="font-weight: 700;" type="button" value="%" onclick="hundred()"></td>
 
@@ -115,7 +116,7 @@
                 </tr>
                 <tr>
 
-                    <td><input type="button" id="prevButton" value="⇐" onclick="showPreviousItem()"></td>
+                    <td><input type="button" id="prevButton" value="&#xf002;" onclick="showPreviousItem()"></td>
                     
                 </tr>
                 <tr>

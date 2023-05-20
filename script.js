@@ -1,9 +1,19 @@
 function append(value) {
     if (document.getElementById("display").value == "undefined") {
         document.getElementById("display").innerHTML = none;
+    } else {
+        var textValue= calculator.display.value + value;
+        calculator.display.value = textValue;
     }
-    var textValue= calculator.display.value + value;
-    calculator.display.value = textValue;
+}
+
+function appendOperator(value) {
+    if (document.getElementById("display").value.length === 0) {
+        document.getElementById("display").innerHTML = none;
+    } else {
+        var textValue= calculator.display.value + value;
+        calculator.display.value = textValue;
+    }
 }
 
 function sqr() {
@@ -19,7 +29,7 @@ function cbr() {
     var cube = document.getElementById("display").value;
     var answer = Math.cbrt(cube);
     document.getElementById("display").value = answer;
-    displayList.push(cube + "**(½)"  + " = " + answer);
+    displayList.push(cube + "**(⅓)"  + " = " + answer);
     const finalArray = displayList.join(" ");
     document.getElementById("displayHistory").innerHTML = finalArray;
 }
@@ -50,7 +60,14 @@ function calculate() {
     var list = displayList;
     calculator.display.value = eval(calculator.display.value);
     var lastItem = displayList[displayList.length - 1];
-    document.getElementById("displayHistory").innerHTML = lastItem;
+    rowNum = displayList.indexOf[lastItem];
+    if (rowNum = 0) {
+        rowNum = rowNum + 0;
+        document.getElementById("displayHistory").innerHTML = rowNum + "  " + lastItem;
+    } else {
+        rowNum = displayList.length;
+        document.getElementById("displayHistory").innerHTML = rowNum + "  " + lastItem;
+    }
 }
 
 function array() {
@@ -195,6 +212,13 @@ toggleBtn.addEventListener('click', () => {
     toggleBtn.innerHTML = 'Switch to Dark Mode';
   }
 });
+
+function addEmoji() {
+  var input = document.getElementById("myInput");
+  var emojiCode = 0x1F604; // Unicode code point for smiling face with smiling eyes emoji
+  var emoji = String.fromCharCode(emojiCode);
+  input.value += emoji;
+}
 
 // Get a reference to the disabled input element
 var display = document.getElementById('display');

@@ -206,3 +206,7 @@ input:active, .dark-light:active {
 .clearhis {
     font-weight: 900;
 }
+
+.highlight {
+  background-color: yellow;
+}
