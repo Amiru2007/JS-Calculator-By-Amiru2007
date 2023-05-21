@@ -65,7 +65,7 @@ form {
 
 #display {
     height: 60px;
-    width: 289px;
+    width: 340px;
     font-size: 30px;
     padding-left: 13px;
     padding-right: 13px;
@@ -103,8 +103,8 @@ form {
 
 #displayHistory {
     margin-top: 8px;
-    height: 555px;
-    width: 333px;
+    height: 60px;
+    width: 200px;
     font-size: 30px;
     line-height: 45px;
     padding-top: 0px;
@@ -118,14 +118,19 @@ form {
     letter-spacing: 2px;
 }
 
+#prevButton, #nextButton {
+    width: 40px;
+    height: 60px;
+}
+
 #equal {
-    height: 227px;
+    height: 96px;
     margin-bottom: -264px;
 }
 
 .clear {
     height: 60px;
-    width: 80px;
+    width: 70px;
     font-size: 30px;
     border-radius: 5px;
     border: none;
@@ -147,8 +152,8 @@ tr {
 }
 
 input, .dark-light {
-    width: 80px;
-    height: 45px;
+    width: 70px;
+    height: 40px;
     margin: 8px;
     border: none;
     border-radius: 5px;
@@ -163,8 +168,8 @@ input:active, .dark-light:active {
 }
 
 #backspace {
-    width: 80px;
-    height: 50px;
+    width: 70px;
+    height: 40px;
     margin-top: 6px;
     margin-bottom: -20px;
     border: none;
@@ -186,6 +191,8 @@ input:active, .dark-light:active {
 
 #hist {
     margin-top: 7px;
+    font-weight: 800;
+    height: 60px;
 }
 
 #myList {
@@ -204,7 +211,7 @@ input:active, .dark-light:active {
 }
 
 .clearhis {
-    font-weight: 900;
+    font-weight: 800;
 }
 
 .highlight {
