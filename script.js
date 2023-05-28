@@ -264,3 +264,33 @@ function showNextItem() {
 }
 
 displayItem(currentItemIndex);
+
+function updateFavicon() {
+    var isDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var favicon = document.getElementById('site-favicon');
+    var faviconLink = document.createElement('link');
+    
+    // Remove existing favicon
+    var existingFavicon = document.getElementById('site-favicon');
+    if (existingFavicon) {
+      existingFavicon.remove();
+    }
+    
+    // Create new favicon link element
+    faviconLink.id = 'site-favicon';
+    faviconLink.rel = 'icon';
+    faviconLink.type = 'image/svg';
+    faviconLink.href = isDark ? 'SVGs/white logo.svg' : 'SVGs/black logo.svg';
+    
+    // Append the new favicon link to the head element
+    document.head.appendChild(faviconLink);
+}
+  
+// Call the updateFavicon function when the page loads
+window.onload = updateFavicon;
+  
+const chevronButton = document.getElementById('prevButton');
+
+chevronButton.addEventListener('click', function() {
+  chevronButton.classList.toggle('active');
+});

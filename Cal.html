@@ -4,7 +4,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
-    <link rel="icon" href="logo.svg" type="image">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="style.css">
@@ -76,7 +75,7 @@
                 </tr>
                 <tr>
 
-                    <td><input type="button" onclick="negate()" value="+/-"></td>
+                    <td><input type="button" class="operator" onclick="negate()" value="+/-"></td>
 
                     <td><input type="button" name="dot" value="&#x2022;" onclick="append('.')"></td>
 
@@ -100,30 +99,13 @@
                 </tr>
                 <tr>
 
-                    <td><input type="button" id="prevButton" value="&#xf002;" onclick="showPreviousItem()"></td>
+                    <td><button type="button" id="prevButton" value="default value" onclick="showPreviousItem()"><img src="SVGs/chevron-left.svg" id="feather-icon" alt="left arrow"></button></td>
                     
                     <td><p type="text" name="Display" id="displayHistory" disabled></p></td>
 
-                    <td><input type="button" id="nextButton" value="⇒" onclick="showNextItem()"></td>
+                    <td><button type="button" id="nextButton" value="⇒" onclick="showNextItem()"><img src="SVGs/chevron-right.svg" id="feather-icon" alt="left arrow"></button></td>
 
                     <td><input type="button" name="his" value="H" id="hist" onclick="screen()"></td>
-
-                </tr>
-            </table>
-            <table style="padding-left: 20px;">
-                <tr>
-
-                </tr>
-                <tr>
-
-                </tr>
-                <tr>
-
-                </tr>
-                <tr>
-
-                </tr>
-                <tr>
 
                 </tr>
             </table>

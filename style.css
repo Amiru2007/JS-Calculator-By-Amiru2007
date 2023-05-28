@@ -103,13 +103,11 @@ form {
 
 #displayHistory {
     margin-top: 8px;
-    height: 60px;
+    height: 45px;
     width: 200px;
     font-size: 30px;
+    padding: 10px;
     line-height: 45px;
-    padding-top: 0px;
-    padding-left: 13px;
-    padding-right: 13px;
     border-radius: 5px;
     margin-bottom: 15px;
     overflow: auto;
@@ -121,6 +119,20 @@ form {
 #prevButton, #nextButton {
     width: 40px;
     height: 60px;
+}
+  
+.prev.active {
+    background-color: #c0c0c0;
+}
+  
+.chevron-svg {
+    width: 16px;
+    height: 16px;
+    transition: fill 0.3s ease;
+}
+  
+.prev.active .chevron-svg {
+    fill: red; /* Change the fill color for active state */
 }
 
 #equal {
@@ -151,7 +163,7 @@ tr {
     justify-content: space-between;
 }
 
-input, .dark-light {
+input, button, .dark-light {
     width: 70px;
     height: 40px;
     margin: 8px;
@@ -162,7 +174,7 @@ input, .dark-light {
 	box-shadow: -5px -5px 15px var(--color-444), 3px 3px 9px var(--color-222), inset 3px 3px 6px var(--color-444), inset -3px -3px 6px var(--color-222);
 }
 
-input:active, .dark-light:active {
+input:active, button:active, .dark-light:active {
 	box-shadow: -5px -5px 15px var(--color-444), 3px 3px 9px var(--color-222), inset 3px 3px 6px var(--color-222), inset -3px -3px 6px var(--color-444);
 	color: var(--click-color);
 }
@@ -215,5 +227,18 @@ input:active, .dark-light:active {
 }
 
 .highlight {
-  background-color: yellow;
+    background-color: yellow;
+}
+
+.prev {
+    background-image: url('SVGs/chevron-left.svg');
+    background-repeat: no-repeat;
+    background-position: right center; /* Adjust the position as needed */
+    padding-right: 20px; /* Adjust the padding to accommodate the SVG image */
+}
+
+#toggle-btn {
+    width: 140px;
+    height: 30px;
+    font-size: 14px;
 }
