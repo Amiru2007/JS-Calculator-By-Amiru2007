@@ -16,24 +16,6 @@ function appendOperator(value) {
     }
 }
 
-function sqr() {
-    var square = document.getElementById("display").value;
-    var answer = Math.sqrt(square);
-    document.getElementById("display").value = answer;
-    displayList.push(square + "**(½)"  + " = " + answer);
-    const finalArray = displayList.join(" ");
-    document.getElementById("displayHistory").innerHTML = finalArray;
-}
-
-function cbr() {
-    var cube = document.getElementById("display").value;
-    var answer = Math.cbrt(cube);
-    document.getElementById("display").value = answer;
-    displayList.push(cube + "**(⅓)"  + " = " + answer);
-    const finalArray = displayList.join(" ");
-    document.getElementById("displayHistory").innerHTML = finalArray;
-}
-
 const displayList = [];
 var list = displayList;
 
@@ -77,6 +59,38 @@ function array() {
     document.getElementById("myselect").value = "mylist";
 }
 
+function sqr() {
+    var square = document.getElementById("display").value;
+    var answer = Math.sqrt(square);
+    document.getElementById("display").value = answer;
+    displayList.push(square + "**(½)"  + " = " + answer);
+    var lastItem = displayList[displayList.length - 1];
+    rowNum = displayList.indexOf[lastItem];
+    if (rowNum = 0) {
+        rowNum = rowNum + 0;
+        document.getElementById("displayHistory").innerHTML = rowNum + "  " + lastItem;
+    } else {
+        rowNum = displayList.length;
+        document.getElementById("displayHistory").innerHTML = rowNum + "  " + lastItem;
+    }
+}
+
+function cbr() {
+    var cube = document.getElementById("display").value;
+    var answer = Math.cbrt(cube);
+    document.getElementById("display").value = answer;
+    displayList.push(cube + "**(⅓)"  + " = " + answer);
+    var lastItem = displayList[displayList.length - 1];
+    rowNum = displayList.indexOf[lastItem];
+    if (rowNum = 0) {
+        rowNum = rowNum + 0;
+        document.getElementById("displayHistory").innerHTML = rowNum + "  " + lastItem;
+    } else {
+        rowNum = displayList.length;
+        document.getElementById("displayHistory").innerHTML = rowNum + "  " + lastItem;
+    }
+}
+
 function screen() {
     if (displayList.length === 0) {
         document.getElementById("displayHistory").innerHTML = none;
@@ -84,7 +98,8 @@ function screen() {
     if (document.getElementById("display").value == "undefined") {
         document.getElementById("displayHistory").innerHTML = none;
     }
-    document.getElementById("displayHistory").innerHTML = displayList;
+    var lastItem = displayList[displayList.length - 1];
+    document.getElementById("displayHistory").innerHTML = lastItem;
 }
 
 function memo() {
@@ -122,19 +137,6 @@ function log() {
     displayList.push("lg" + logarithm1 + " = " + logarithm2);
     const finalArray = displayList.join(" ");
     document.getElementById("displayHistory").innerHTML = finalArray;
-}
-
-function sin() {
-    var sin1 = document.getElementById("display").value;
-    var sin2 = Math.sin(sin1).toFixed(2);
-    document.getElementById("display").value = sin2;
-}
-
-function cos() {
-    var cos1 = document.getElementById("display").value;
-    var cos2 = 180 / cos1;
-    var cos3 = Math.cos(Math.PI/cos2).toFixed(2);
-    document.getElementById("display").value = cos3;
 }
 
 function tan() {

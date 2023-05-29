@@ -1,5 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 3px;
+	background-color: var(--bg-color);
+}
+
+::-webkit-scrollbar {
+	width: 5px;
+	background-color: var(--bg-color);
+	height: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 3px;
+	width: 5px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: var(--text-color);
+}
+
 :root {
     --bg-color: #e0e0e0;
     --text-color: #333333;
@@ -103,36 +122,23 @@ form {
 
 #displayHistory {
     margin-top: 8px;
-    height: 45px;
-    width: 200px;
-    font-size: 30px;
-    padding: 10px;
-    line-height: 45px;
+    height: 60px;
+    width: 215px;
+    font-size: 24px;
+    padding: 0px 5px 0px 10px;
+    line-height: 55px;
     border-radius: 5px;
     margin-bottom: 15px;
     overflow: auto;
     text-align: left;
 	box-shadow: -5px -5px 15px var(--color-444), 3px 3px 9px var(--color-222), inset 3px 3px 6px var(--color-222), inset -3px -3px 6px var(--color-444);
     letter-spacing: 2px;
+    white-space: nowrap;
 }
 
 #prevButton, #nextButton {
     width: 40px;
     height: 60px;
-}
-  
-.prev.active {
-    background-color: #c0c0c0;
-}
-  
-.chevron-svg {
-    width: 16px;
-    height: 16px;
-    transition: fill 0.3s ease;
-}
-  
-.prev.active .chevron-svg {
-    fill: red; /* Change the fill color for active state */
 }
 
 #equal {
@@ -222,8 +228,14 @@ input:active, button:active, .dark-light:active {
     letter-spacing: 2px;
 }
 
-.clearhis {
+.clearhis,
+.bold {
     font-weight: 800;
+}
+
+.small {
+    font-size: large;
+    font-weight: 700;
 }
 
 .highlight {
