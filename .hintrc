@@ -1,7 +1,5 @@
 {
-  "extends": [
-    "development"
-  ],
+  "extends": ["development"],
   "browserslist": [
     "defaults",
     "not ie 11",
@@ -12,9 +10,7 @@
     "compat-api/css": [
       "default",
       {
-        "ignore": [
-          "height: fit-content"
-        ]
+        "ignore": ["height: fit-content"]
       }
     ],
     "axe/forms": [

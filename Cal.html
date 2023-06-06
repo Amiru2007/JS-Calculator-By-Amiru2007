@@ -1,117 +1,342 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculator</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/de6203fbaf.js" crossorigin="anonymous"></script>
-</head>
-<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/de6203fbaf.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
     <center>
-        <form name ="calculator">
-            <table style="padding-right: 25px;">
-            </table>
-            <table>
-                <tr>
-                    <td colspan="4">
-                        <input type="text" name="Display" id="display" placeholder="0" oninput="checkInput()" disabled>
-                        <input class="clear" type="button" onclick="clearFields()" value="C">
-                    </td>
-                </tr>
-                <tr>
+      <div id="bodyblur" onclick="closeFinalAnswerPopup()">
+        <div id="finalEquation">
+          <p type="text" name="finalEquation" id="popupEquation" disabled></p>
+        </div>
+      </div>
+      <form name="calculator">
+        <table style="padding-right: 25px"></table>
+        <table>
+          <tr>
+            <td colspan="4">
+              <input
+                type="text"
+                name="Display"
+                id="display"
+                placeholder="0"
+                oninput="checkInput()"
+                disabled
+              />
+              <input
+                class="clear"
+                type="button"
+                onclick="clearFields()"
+                value="C"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input type="button" name="one" value="1" onclick="append('1')" />
+            </td>
 
-                    <td><input type="button" name="one" value="1" onclick="append('1')"></td>
+            <td>
+              <input type="button" name="two" value="2" onclick="append('2')" />
+            </td>
 
-                    <td><input type="button" name="two" value="2" onclick="append('2')"></td>
+            <td>
+              <input
+                type="button"
+                name="three"
+                value="3"
+                onclick="append('3')"
+              />
+            </td>
 
-                    <td><input type="button" name="three" value="3" onclick="append('3')"></td>
+            <td>
+              <input
+                type="button"
+                class="operator"
+                name="plus"
+                value="+"
+                onclick="appendOperator('+'), begin()"
+              />
+            </td>
 
-                    <td><input type="button" class="operator" name="plus" value="+" onclick="appendOperator('+'), begin()"></td>
+            <td>
+              <input
+                type="button"
+                class="operator small"
+                name="power"
+                value="xʸ"
+                onclick="appendOperator('**'), begin()"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input
+                type="button"
+                name="four"
+                value="4"
+                onclick="append('4')"
+              />
+            </td>
 
-                    <td><input type="button" class="operator small" name="power" value="xʸ" onclick="appendOperator('**'), begin()"></td>
-                    
-                </tr>
-                <tr>				
+            <td>
+              <input
+                type="button"
+                name="five"
+                value="5"
+                onclick="append('5')"
+              />
+            </td>
 
-                    <td><input type="button" name="four" value="4" onclick="append('4')"></td>
-                
-                    <td><input type="button" name="five" value="5" onclick="append('5')"></td>
+            <td>
+              <input type="button" name="six" value="6" onclick="append('6')" />
+            </td>
 
-                    <td><input type="button" name="six" value="6" onclick="append('6')"></td>
+            <td>
+              <input
+                type="button"
+                class="operator"
+                name="substract"
+                value="-"
+                onclick="appendOperator('-')"
+              />
+            </td>
 
-                    <td><input type="button" class="operator" name="substract" value="-" onclick="appendOperator('-')"></td>
-                
-                    <td><input type="button" class="operator small" name="square root" value="²√" onclick="sqr()"></td>
+            <td>
+              <input
+                type="button"
+                class="operator small"
+                name="square root"
+                value="²√"
+                onclick="sqr()"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input
+                type="button"
+                name="seven"
+                value="7"
+                onclick="append('7')"
+              />
+            </td>
 
-                </tr>				
-                <tr>
+            <td>
+              <input
+                type="button"
+                name="eight"
+                value="8"
+                onclick="append('8')"
+              />
+            </td>
 
-                    <td><input type="button" name="seven" value="7" onclick="append('7')"></td>				
+            <td>
+              <input
+                type="button"
+                name="nine"
+                value="9"
+                onclick="append('9')"
+              />
+            </td>
 
-                    <td><input type="button" name="eight" value="8" onclick="append('8')"></td>
+            <td>
+              <input
+                type="button"
+                class="operator"
+                name="multiply"
+                value="×"
+                onclick="appendOperator('*'), begin()"
+              />
+            </td>
 
-                    <td><input type="button" name="nine" value="9" onclick="append('9')"></td>
+            <td>
+              <input
+                type="button"
+                class="operator small"
+                name="cube root"
+                value="³√"
+                onclick="cbr()"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input
+                type="button"
+                name="dot"
+                value="&lpar;"
+                onclick="append('&lpar;')"
+              />
+            </td>
 
-                    <td><input type="button" class="operator" name="multiply" value="×" onclick="appendOperator('*'), begin()"></td>
-                    
-                    <td><input type="button" class="operator small" name="cube root" value="³√" onclick="cbr()"></td>
+            <td>
+              <input
+                type="button"
+                name="zero"
+                value="0"
+                onclick="append('0')"
+              />
+            </td>
 
-                </tr>
-                <tr>
+            <td>
+              <input
+                type="button"
+                name="dot"
+                value="&rpar;"
+                onclick="append('&rpar;')"
+              />
+            </td>
 
-                    <td><input type="button" name="dot" value="&lpar;" onclick="append('&lpar;')"></td>
-                    
-                    <td><input type="button" name="zero" value="0" onclick="append('0')"></td>
-                    
-                    <td><input type="button" name="dot" value="&rpar;" onclick="append('&rpar;')"></td>
+            <td>
+              <input
+                type="button"
+                class="operator"
+                id="operator"
+                name="devide"
+                value="÷"
+                onclick="appendOperator('/'), begin(this.id)"
+              />
+            </td>
 
-                    <td><input type="button" class="operator" id="operator" name="devide" value="÷" onclick="appendOperator('/'), begin(this.id)"></td>
+            <td>
+              <input
+                id="backspace"
+                type="button"
+                value="⇽"
+                onclick="back('<')"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input
+                type="button"
+                class="operator small"
+                onclick="negate()"
+                value="+/-"
+              />
+            </td>
 
-                    <td><input id="backspace" type="button" value="⇽" onclick="back('<')"></td>
+            <td>
+              <input
+                type="button"
+                name="dot"
+                value="&#x2022;"
+                onclick="append('.')"
+              />
+            </td>
 
-                </tr>
-                <tr>
+            <td>
+              <input
+                type="button"
+                class="bold"
+                value="𝜋"
+                onclick="append('(22/7)')"
+              />
+            </td>
 
-                    <td><input type="button" class="operator small" onclick="negate()" value="+/-"></td>
+            <td>
+              <input
+                type="button"
+                class="operator small"
+                name="devide"
+                value="¹/ₓ"
+                onclick="oneDivide()"
+              />
+            </td>
 
-                    <td><input type="button" name="dot" value="&#x2022;" onclick="append('.')"></td>
+            <td>
+              <input
+                type="button"
+                class="bold"
+                name="doit"
+                value="="
+                id="equal"
+                onclick="calculate(), history()"
+              />
+            </td>
+          </tr>
+          <tr style="width: 80%">
+            <td>
+              <input
+                class="clearhis"
+                type="button"
+                onclick="clearHisAlert()"
+                value="CH"
+              />
+            </td>
 
-                    <td><input type="button" class="bold" value="𝜋" onclick="append('(22/7)')"/></td>
+            <td>
+              <input
+                type="button"
+                class="bold"
+                value="lg"
+                onclick="log()"
+                id="log10"
+              />
+            </td>
 
-                    <td><input type="button" class="operator small" name="devide" value="¹/ₓ" onclick="oneDivide()"></td>
+            <td>
+              <input type="button" class="bold" value="tan" onclick="tan()" />
+            </td>
 
-                    <td><input type="button" class="bold" name="doit" value="=" id="equal" onclick="calculate(), history()"></td>
+            <td><input type="button" value="EXP" onclick="exp()" /></td>
+          </tr>
+          <tr>
+            <td>
+              <button
+                class="arrowButtons"
+                type="button"
+                id="prevButton"
+                onclick="showPreviousItem()"
+              >
+                <img
+                  src="SVGs/chevron-left.svg"
+                  id="feather-icon"
+                  alt="left arrow"
+                />
+              </button>
+            </td>
 
-                </tr>
-                <tr style="width: 80%;">
+            <td>
+              <p type="text" name="Display" id="displayHistory" disabled></p>
+            </td>
 
-                    <td><input class="clearhis" type="button" onclick="clearHisAlert()" value="CH"></td>
+            <td>
+              <button class="arrowButtons" type="button" id="nextButton" onclick="showNextItem()">
+                <img
+                  src="SVGs/chevron-right.svg"
+                  id="feather-icon"
+                  alt="left arrow"
+                />
+              </button>
+            </td>
 
-                    <td><input type="button" class="bold" value="lg" onclick="log()" id="log10"/></td>
-
-                    <td><input type="button" class="bold" value="tan" onclick="tan()"/></td>
-
-                    <td><input type="button" value="EXP" onclick="exp()"/></td>
-
-                </tr>
-                <tr>
-
-                    <td><button type="button" id="prevButton" onclick="showPreviousItem()"><img src="SVGs/chevron-left.svg" id="feather-icon" alt="left arrow"></button></td>
-                    
-                    <td><p type="text" name="Display" id="displayHistory" disabled></p></td>
-
-                    <td><button type="button" id="nextButton" onclick="showNextItem()"><img src="SVGs/chevron-right.svg" id="feather-icon" alt="left arrow"></button></td>
-
-                    <td><input type="button" name="his" value="H" id="hist" onclick="screen()"></td>
-
-                </tr>
-            </table>
-        </form>
-    <button id="toggle-btn">Switch to Dark Mode</button>
+            <td>
+              <input
+                type="button"
+                name="his"
+                value="H"
+                id="hist"
+                onclick="screen()"
+              />
+            </td>
+          </tr>
+        </table>
+      </form>
+      <button id="toggle-btn">Switch to Dark Mode</button>
     </center>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

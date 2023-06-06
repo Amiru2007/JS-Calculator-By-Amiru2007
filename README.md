@@ -6,7 +6,6 @@ Scientific calculator powered by JavaScript. The calculator includes number butt
 
 In addition, this calculator also has 5 other scientific operations. This calculator has Clear, Backspace, History, Percentage and π buttons. You can find the square root and cube root of a number using this calculator. I'am just working on this, I'll upload a youtube video soon.
 
-
 ### Follow me for more projects...
 
 Codepen &nbsp;-&nbsp;&nbsp; https://codepen.io/Amiru-Weerathunga
