@@ -57,14 +57,19 @@ function calculate() {
   rowNum = displayList.indexOf[lastItem];
   if ((rowNum = 0)) {
     rowNum = rowNum + 0;
-    document.getElementById("displayHistory").innerHTML =
-      rowNum + "  " + lastItem;
+    document.getElementById("displayHistory").innerHTML = lastItem;
   } else {
     rowNum = displayList.length;
-    document.getElementById("displayHistory").innerHTML =
-      rowNum + "  " + lastItem;
+    document.getElementById("displayHistory").innerHTML = lastItem;
   }
 }
+
+document.addEventListener("keydown", function (event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    calculate();
+  }
+});
 
 function array() {
   var mylist = document.getElementById("myList");
@@ -82,12 +87,10 @@ function sqr() {
   rowNum = displayList.indexOf[lastItem];
   if ((rowNum = 0)) {
     rowNum = rowNum + 0;
-    document.getElementById("displayHistory").innerHTML =
-      rowNum + "  " + lastItem;
+    document.getElementById("displayHistory").innerHTML = lastItem;
   } else {
     rowNum = displayList.length;
-    document.getElementById("displayHistory").innerHTML =
-      rowNum + "  " + lastItem;
+    document.getElementById("displayHistory").innerHTML = lastItem;
   }
 }
 
@@ -100,12 +103,10 @@ function cbr() {
   rowNum = displayList.indexOf[lastItem];
   if ((rowNum = 0)) {
     rowNum = rowNum + 0;
-    document.getElementById("displayHistory").innerHTML =
-      rowNum + "  " + lastItem;
+    document.getElementById("displayHistory").innerHTML = lastItem;
   } else {
     rowNum = displayList.length;
-    document.getElementById("displayHistory").innerHTML =
-      rowNum + "  " + lastItem;
+    document.getElementById("displayHistory").innerHTML = lastItem;
   }
 }
 
@@ -153,8 +154,8 @@ function log() {
   var answer = Math.log10(logarithm);
   document.getElementById("display").value = answer;
   displayList.push("lg" + logarithm + " = " + answer);
-  const finalArray = displayList.join(" ");
-  document.getElementById("displayHistory").innerHTML = finalArray;
+  var lastItem = displayList[displayList.length - 1];
+  document.getElementById("displayHistory").innerHTML = lastItem;
 }
 
 function tan() {
@@ -328,34 +329,58 @@ chevronButton.addEventListener("click", function () {
 });
 
 var intervalId; // Variable to store the interval ID
+var getIndex;
 
 function updateTarget() {
-  var sourceText = document.getElementById('displayHistory').innerText; // Get the text from the source paragraph
-  document.getElementById('popupEquation').innerText = sourceText; // Update the text of the target paragraph
+  var sourceText = document.getElementById("displayHistory").innerText; // Get the text from the source paragraph
+  document.getElementById("ee").innerText = sourceText; // Update the text of the target paragraph
+  getIndex = sourceText;
+}
+
+var texts = [
+  "Full view of the selected item",
+  "Click anywhere to return"
+];
+var switcherIndex = 0;
+var textSwitcher = document.getElementById("popupEquation");
+
+function switchText() {
+  textSwitcher.textContent = texts[switcherIndex];
+  switcherIndex = (switcherIndex + 1) % texts.length;
+}
+
+// Start the text switcher
+setInterval(switchText, 2000); // Change text every 2 seconds
+
+
+function getRowNumber() {
+  document.getElementById("getArrayIndex").innerHTML = displayList.indexOf(getIndex) + 1; // add one to show the real world index of the getIndex
 }
 
 function stopContinuousFunction() {
   clearInterval(intervalId); // Clear the interval
-  var div = document.getElementById('bodyblur');
-  div.style.display = 'flex';
-  document.body.style.overflow = 'hidden';
+  var div = document.getElementById("bodyblur");
+  var sourceText = document.getElementById("displayHistory").innerText;
+  div.style.display = "flex";
+  document.body.style.overflow = "hidden";
 }
 
 function closeFinalAnswerPopup() {
-  var div = document.getElementById('bodyblur');
-  div.style.display = 'none';
-  document.body.style.overflow = 'auto';
+  var div = document.getElementById("bodyblur");
+  div.style.display = "none";
+  document.body.style.overflow = "auto";
 }
 
-document.addEventListener('keydown', function(event) {
-  if (event.key === 'Escape') {
-    var myDiv = document.getElementById('bodyblur');
-    myDiv.style.display = 'none';
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Escape") {
+    var myDiv = document.getElementById("bodyblur");
+    myDiv.style.display = "none";
   }
 });
 
 setInterval(updateTarget, 0);
+setInterval(getRowNumber, 0);
 
-var stopButton = document.getElementById('displayHistory');
-stopButton.addEventListener('click', stopContinuousFunction);
-startButton.addEventListener('click', startContinuousFunction);;
+var stopButton = document.getElementById("displayHistory");
+stopButton.addEventListener("click", stopContinuousFunction);
+startButton.addEventListener("click", startContinuousFunction);

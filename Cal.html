@@ -16,6 +16,9 @@
   <body>
     <center>
       <div id="bodyblur" onclick="closeFinalAnswerPopup()">
+        <div class="arrayIndex">
+          <p type="text" name="arrayIndex" id="getArrayIndex" disabled></p>
+        </div>
         <div id="finalEquation">
           <p type="text" name="finalEquation" id="popupEquation" disabled></p>
         </div>
@@ -291,7 +294,9 @@
               <input type="button" class="bold" value="tan" onclick="tan()" />
             </td>
 
-            <td><input type="button" value="EXP" onclick="exp()" /></td>
+            <td>
+              <input type="button" class="bold" value="EXP" onclick="exp()" />
+            </td>
           </tr>
           <tr>
             <td>
@@ -301,11 +306,7 @@
                 id="prevButton"
                 onclick="showPreviousItem()"
               >
-                <img
-                  src="SVGs/chevron-left.svg"
-                  id="feather-icon"
-                  alt="left arrow"
-                />
+                ‹
               </button>
             </td>
 
@@ -314,12 +315,13 @@
             </td>
 
             <td>
-              <button class="arrowButtons" type="button" id="nextButton" onclick="showNextItem()">
-                <img
-                  src="SVGs/chevron-right.svg"
-                  id="feather-icon"
-                  alt="left arrow"
-                />
+              <button
+                class="arrowButtons"
+                type="button"
+                id="nextButton"
+                onclick="showNextItem()"
+              >
+                ›
               </button>
             </td>
 
@@ -335,7 +337,9 @@
           </tr>
         </table>
       </form>
-      <button id="toggle-btn">Switch to Dark Mode</button>
+      <div class="toogle-container">
+        <button id="toggle-btn">Switch to Dark Mode</button>
+      </div>
     </center>
     <script src="script.js"></script>
   </body>

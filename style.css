@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200;6..12,300;6..12,400;6..12,500;6..12,600;6..12,700;6..12,800;6..12,900;6..12,1000&display=swap");
 
 ::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
@@ -24,6 +24,8 @@
   --text-color: #333333;
   --color-222: #bebebe;
   --color-444: #ffffff;
+  --color-f73: #ffffff73;
+  --color-54d: #5e68794d;
   --click-color: #0074d9;
   --click-color-dark: #0074d9;
 }
@@ -31,12 +33,14 @@
 .dark {
   --bg-color: #27292f;
   --text-color: #f8f8f8;
-  --color-222: #212328;
-  --color-444: #2d2f36;
+  --color-222: #33353a;
+  --color-444: #1a1a1f;
+  --color-f73: #08080873;
+  --color-54d: #2a2f334d;
 }
 
 * {
-  font-family: "Barlow", sans-serif;
+  font-family: "Nunito Sans", sans-serif;
   background: var(--bg-color);
   color: var(--text-color);
 }
@@ -80,6 +84,105 @@ form {
   color: var(--click-color-dark);
 }
 
+#bodyblur {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  display: none;
+  z-index: 1000;
+  transition: all 2s ease-in-out;
+}
+
+#bodyblur #getArrayIndex,
+#bodyblur #finalEquation {
+  margin-top: 8px;
+  font-size: 35px;
+  line-height: 10px;
+  border-radius: 15px;
+  margin-bottom: 15px;
+  overflow: auto;
+  text-align: left;
+  letter-spacing: 2px;
+  white-space: nowrap;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: -5px -5px 9px var(--color-f73), 5px 5px 9px var(--color-54d);
+}
+
+#bodyblur #getArrayIndex::after,
+#bodyblur #finalEquation::after {
+  content: "";
+  position: absolute;
+  height: 70px;
+  width: 590px;
+  background-color: transparent;
+  border-radius: 12px;
+  box-shadow: inset -5px -5px 9px var(--color-f73),
+    inset 5px 5px 9px var(--color-54d);
+}
+
+#bodyblur #finalEquation {
+  height: 80px;
+  width: 600px;
+}
+
+#bodyblur #finalEquation::after {
+  height: 70px;
+  width: 590px;
+}
+
+#bodyblur #getArrayIndex {
+  height: 80px;
+  width: 80px;
+}
+
+#bodyblur #getArrayIndex::after {
+  height: 70px;
+  width: 70px;
+}
+
+#bodyblur #finalEquation .closediv {
+  border-radius: 50px;
+  border: 4px solid #f3f4f7;
+  display: flex;
+  align-items: center;
+  justify-content: flex;
+  background: #0074d9;
+  margin-right: 4px;
+  width: 30px;
+  height: 30px;
+  box-shadow: 5px 5px 15px rgba(55, 84, 170, 0.15),
+    -5px -5px 20px rgba(255, 255, 255, 1),
+    inset 0px 0px 4px rgba(255, 255, 255, 0),
+    inset 5px 5px 15px rgba(55, 84, 170, 0.15),
+    0px 0px 4px rgba(255, 255, 255, 0.2) !important;
+}
+
+#bodyblur #finalEquation .closediv .popupclose {
+  box-shadow: none;
+  background: transparent !important;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex;
+  font-size: 20px;
+  text-align: center;
+  color: #ededed;
+  text-shadow: 5px 5px 15px rgba(55, 84, 170, 0.15),
+    -5px -5px 20px rgba(255, 255, 255, 1),
+    inset 0px 0px 4px rgba(255, 255, 255, 0),
+    inset 5px 5px 15px rgba(55, 84, 170, 0.15),
+    0px 0px 4px rgba(255, 255, 255, 0.2) !important;
+}
+
 #display {
   height: 60px;
   width: 340px;
@@ -117,7 +220,8 @@ form {
 }
 
 .operator {
-  font-size: 30px;
+  font-size: 23px;
+  font-weight: 700;
 }
 
 #displayHistory {
@@ -195,6 +299,12 @@ input:active,
   color: var(--click-color);
 }
 
+.arrowButtons {
+  line-height: 100%;
+  font-size: 35px;
+  font-weight: 600;
+}
+
 #backspace {
   width: 70px;
   height: 40px;
@@ -264,78 +374,38 @@ input:active,
   /* Adjust the padding to accommodate the SVG image */
 }
 
+.toogle-container {
+  width: 180px !important;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: transparent;
+  border-radius: 15px;
+  box-shadow: -5px -5px 9px var(--color-f73), 5px 5px 9px var(--color-54d);
+}
+
+.toogle-container::after {
+  content: "";
+  position: absolute;
+  height: 26px;
+  width: 176px !important;
+  background-color: transparent;
+  border-radius: 15px;
+  box-shadow: inset -5px -5px 9px var(--color-f73),
+    inset 5px 5px 9px var(--color-54d);
+}
+
 #toggle-btn {
-  width: 140px;
+  width: -moz-fit-content;
+  width: fit-content !important;
   height: 30px;
   font-size: 14px;
   z-index: -1000;
-}
-
-#bodyblur {
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100vw;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: transparent;
-  display: none;
-  z-index: 1000;
-}
-
-#bodyblur #finalEquation {
-  margin-top: 8px;
-  height: fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  font-size: 35px;
-  padding: 0px 20px 0px 20px;
-  line-height: 10px;
-  border-radius: 10px;
-  margin-bottom: 15px;
-  overflow: auto;
-  text-align: left;
-  box-shadow: -5px -5px 15px var(--color-444), 3px 3px 9px var(--color-222),
-    inset 3px 3px 6px var(--color-222), inset -3px -3px 6px var(--color-444);
-  letter-spacing: 2px;
-  white-space: nowrap;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-#bodyblur #finalEquation .closediv {
-  border-radius: 50px;
-  border: 4px solid #f3f4f7;
-  display: flex;
-  align-items: center;
-  justify-content: flex;
-  background: #0074d9;
-  margin-right: 4px;
-  width: 30px;
-  height: 30px;
-  box-shadow: 5px 5px 15px rgba(55, 84, 170, .15),
-              -5px -5px 20px rgba(255, 255, 255, 1),
-              inset 0px 0px 4px rgba(255, 255, 255, 0),
-              inset 5px 5px 15px rgba(55, 84, 170, .15),
-              0px 0px 4px rgba(255, 255, 255, .2) !important;
-}
-
-#bodyblur #finalEquation .closediv .popupclose {
-  box-shadow: none;
+  text-align: center;
   background: transparent !important;
   border: none;
-  display: flex;
-  align-items: center;
-  justify-content: flex;
-  font-size: 20px;
-  text-align: center;
-  color: #ededed;
-  text-shadow: 5px 5px 15px rgba(55, 84, 170, .15),
-              -5px -5px 20px rgba(255, 255, 255, 1),
-              inset 0px 0px 4px rgba(255, 255, 255, 0),
-              inset 5px 5px 15px rgba(55, 84, 170, .15),
-              0px 0px 4px rgba(255, 255, 255, .2) !important;
+  padding: 0 20px 0 20px;
+  z-index: 1000;
 }
