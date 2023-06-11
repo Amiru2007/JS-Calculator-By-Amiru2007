@@ -1,7 +1,7 @@
 function append(value) {
   if (document.getElementById("display").value == "undefined") {
     document.getElementById("display").innerHTML = none;
-  } else {
+  }  else {
     var textValue = calculator.display.value + value;
     calculator.display.value = textValue;
   }
@@ -20,14 +20,22 @@ const displayList = [];
 var list = displayList;
 
 function calculate() {
+  var value = document.getElementById("display").value;
+  var lastCharacter = value.charAt(value.length - 1);
+  const operatorSymbols = ["+", "-", "*", "/", ".", "**"];
   if (document.getElementById("display").value == "NaN") {
-    document.getElementById("displayHistory").innerHTML = none;
+    return;
   } else if (document.getElementById("display").value == "NaN") {
-    document.getElementById("displayHistory").innerHTML = none;
+    return;
   } else if (document.getElementById("display").value == "") {
-    displayList.push("");
+    return;
   } else if (document.getElementById("display").value == "undefined") {
-    displayList.push("");
+    return;
+  } else if (operatorSymbols.includes(lastCharacter)) {
+    var valueLength = value.length;
+    const newValue = value.slice(0, valueLength - 1);
+    document.getElementById("display").value = newValue;
+    displayList.push(newValue + " = " + eval(calculator.display.value));
   } else {
     if (displayList.length === 0) {
       displayList.push(
@@ -164,8 +172,15 @@ function tan() {
   let finalAnswer = Math.tan(answer);
   document.getElementById("display").value = finalAnswer;
   displayList.push("tan(" + tan + ") = " + finalAnswer);
-  const finalArray = displayList.join(" ");
-  document.getElementById("displayHistory").innerHTML = finalArray;
+  var lastItem = displayList[displayList.length - 1];
+  rowNum = displayList.indexOf[lastItem];
+  if ((rowNum = 0)) {
+    rowNum = rowNum + 0;
+    document.getElementById("displayHistory").innerHTML = lastItem;
+  } else {
+    rowNum = displayList.length;
+    document.getElementById("displayHistory").innerHTML = lastItem;
+  }
 }
 
 function exp() {
@@ -173,8 +188,15 @@ function exp() {
   var answer = Math.exp(exp);
   document.getElementById("display").value = answer;
   displayList.push("exp(" + exp + ") = " + answer);
-  const finalArray = displayList.join(" ");
-  document.getElementById("displayHistory").innerHTML = finalArray;
+  var lastItem = displayList[displayList.length - 1];
+  rowNum = displayList.indexOf[lastItem];
+  if ((rowNum = 0)) {
+    rowNum = rowNum + 0;
+    document.getElementById("displayHistory").innerHTML = lastItem;
+  } else {
+    rowNum = displayList.length;
+    document.getElementById("displayHistory").innerHTML = lastItem;
+  }
 }
 
 function fi() {
@@ -235,9 +257,11 @@ const body = document.body;
 toggleBtn.addEventListener("click", () => {
   body.classList.toggle("dark");
   if (body.classList.contains("dark")) {
-    toggleBtn.innerHTML = "Switch to Light Mode";
+    toggleBtn.innerHTML =
+      "<span class='material-symbols-outlined'>light_mode</span>";
   } else {
-    toggleBtn.innerHTML = "Switch to Dark Mode";
+    toggleBtn.innerHTML =
+      "<span class='material-symbols-outlined'>dark_mode</span>";
   }
 });
 
@@ -333,28 +357,22 @@ var getIndex;
 
 function updateTarget() {
   var sourceText = document.getElementById("displayHistory").innerText; // Get the text from the source paragraph
-  document.getElementById("ee").innerText = sourceText; // Update the text of the target paragraph
+  if (sourceText.length === 0) {
+    document.getElementById("popupEquation").innerText = "sourceText";
+    return;
+  }
+  document.getElementById("popupEquation").innerText = sourceText; // Update the text of the target paragraph
   getIndex = sourceText;
 }
 
-var texts = [
-  "Full view of the selected item",
-  "Click anywhere to return"
-];
-var switcherIndex = 0;
-var textSwitcher = document.getElementById("popupEquation");
-
-function switchText() {
-  textSwitcher.textContent = texts[switcherIndex];
-  switcherIndex = (switcherIndex + 1) % texts.length;
-}
-
-// Start the text switcher
-setInterval(switchText, 2000); // Change text every 2 seconds
-
-
 function getRowNumber() {
-  document.getElementById("getArrayIndex").innerHTML = displayList.indexOf(getIndex) + 1; // add one to show the real world index of the getIndex
+  if (getIndex === "") {
+    document.getElementById("popupEquation").innerText = getIndex; // add one to show the real world index of the getIndex
+    return;
+  } else {
+    document.getElementById("getArrayIndex").innerHTML =
+      displayList.indexOf(getIndex) + 1; // add one to show the real world index of the getIndex
+  }
 }
 
 function stopContinuousFunction() {
