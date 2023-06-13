@@ -1,7 +1,7 @@
 function append(value) {
   if (document.getElementById("display").value == "undefined") {
     document.getElementById("display").innerHTML = none;
-  }  else {
+  } else {
     var textValue = calculator.display.value + value;
     calculator.display.value = textValue;
   }
