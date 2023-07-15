@@ -1,3 +1,38 @@
+var inputIds = [
+  "prevOnFull",
+  "closePopup",
+  "textCopy",
+  "clearFull",
+  "nextOnFull",
+  "superscript",
+  "square",
+  "cube",
+  "backspace",
+  "plusMinus",
+  "prevButton",
+  "nextButton",
+];
+var iconClasses = [
+  "\uf053",
+  "\uf55a",
+  "\uf0c5",
+  "\uf030",
+  "\uf054",
+  "\uf12b",
+  "\uf698",
+  "³\uf698",
+  "\uf55a",
+  "\ue43c",
+  "\uf053",
+  "\uf054",
+];
+
+for (var i = 0; i < inputIds.length; i++) {
+  var input = document.getElementById(inputIds[i]);
+  input.value = iconClasses[i]; // Replace with the Unicode value of the desired Font Awesome icon
+  input.classList.add("fa");
+}
+
 function append(value) {
   if (document.getElementById("display").value == "undefined") {
     document.getElementById("display").innerHTML = none;
@@ -148,6 +183,9 @@ function clearFields() {
 function clearHisAlert() {
   if (confirm("Are you sure you want to clear history?")) {
     clearHis();
+    let bodyblur = document.getElementById('bodyblur');
+    bodyblur.style.display = "none";
+    document.body.style.overflow = "auto";
   }
 }
 
@@ -213,7 +251,8 @@ function negate() {
     num1 = document.getElementById("display").value;
     num2 = -1;
     negated = num1 * num2;
-    document.getElementById("display").value = num1 + "*" + num2;
+    var value = "(" + num1 + ")";
+    document.getElementById("display").value = "(" + value + "*" + num2 + ")";
   }
 }
 
@@ -302,23 +341,63 @@ function displayItem(index) {
 }
 
 function showPreviousItem() {
+
   if (displayList.length <= 1) {
+    alert("There's nothing");
     return;
   }
-  currentItemIndex =
-    (currentItemIndex - 1 + displayList.length) % displayList.length;
+  
+  currentItemIndex = (currentItemIndex - 1 + displayList.length) % displayList.length;
   displayItem(currentItemIndex);
 }
 
+document.getElementById("prevOnFull").onclick = function() {
+  // Delay the execution of the "delayedFunction" by 2 seconds (2000 milliseconds)
+  setTimeout(showPreviousItem, 500);
+};
+
 function showNextItem() {
+
   if (displayList.length <= 1) {
+    alert("There's nothing");
     return;
   }
+  
   currentItemIndex = (currentItemIndex + 1) % displayList.length;
   displayItem(currentItemIndex);
 }
 
+document.getElementById("nextOnFull").onclick = function() {
+  // Delay the execution of the "delayedFunction" by 2 seconds (2000 milliseconds)
+  setTimeout(showNextItem, 500);
+};
+
 displayItem(currentItemIndex);
+
+const animateButton1 = document.getElementById('prevOnFull');
+const animateButton2 = document.getElementById('nextOnFull');
+const animatedElement = document.getElementById('equationDetail');
+
+function animateElement() {
+
+  if (displayList.length <= 1) {
+    return;
+  }
+
+  // Add the class to start the animation
+  animatedElement.classList.add('fadeAnimation');
+
+  // Remove the class after the animation completes to reset it for future clicks
+  animatedElement.addEventListener('animationend', onAnimationEnd);
+}
+
+function onAnimationEnd() {
+  animatedElement.classList.remove('fadeAnimation');
+  animatedElement.removeEventListener('animationend', onAnimationEnd);
+}
+
+animateButton1.addEventListener('click', animateElement);
+animateButton2.addEventListener('click', animateElement);
 
 function updateFavicon() {
   var isDark =
@@ -358,7 +437,7 @@ var getIndex;
 function updateTarget() {
   var sourceText = document.getElementById("displayHistory").innerText; // Get the text from the source paragraph
   if (sourceText.length === 0) {
-    document.getElementById("popupEquation").innerText = "sourceText";
+    document.getElementById("popupEquation").innerText = "ಠ_ಠ";
     return;
   }
   document.getElementById("popupEquation").innerText = sourceText; // Update the text of the target paragraph
@@ -377,15 +456,16 @@ function getRowNumber() {
 
 function stopContinuousFunction() {
   clearInterval(intervalId); // Clear the interval
+  
   var div = document.getElementById("bodyblur");
   var sourceText = document.getElementById("displayHistory").innerText;
   div.style.display = "flex";
   document.body.style.overflow = "hidden";
 }
 
-function closeFinalAnswerPopup() {
-  var div = document.getElementById("bodyblur");
-  div.style.display = "none";
+function closingPopup() {
+  let bodyblur = document.getElementById('bodyblur');
+  bodyblur.style.display = "none";
   document.body.style.overflow = "auto";
 }
 
@@ -402,3 +482,33 @@ setInterval(getRowNumber, 0);
 var stopButton = document.getElementById("displayHistory");
 stopButton.addEventListener("click", stopContinuousFunction);
 startButton.addEventListener("click", startContinuousFunction);
+
+function textCopy() {
+  // Get the text from the <p> tag
+  var text = document.getElementById("popupEquation").innerText;
+
+  if (text === "ಠ_ಠ") {
+    alert("Nothing to copy here");
+    return;
+  }
+
+  // Create a temporary textarea element to hold the text
+  var tempTextArea = document.createElement("textarea");
+  tempTextArea.value = text;
+
+  // Append the textarea to the document body
+  document.body.appendChild(tempTextArea);
+
+  // Select the text within the textarea
+  tempTextArea.select();
+  tempTextArea.setSelectionRange(0, 99999); // For mobile devices
+
+  // Copy the selected text to the clipboard
+  document.execCommand("copy");
+
+  // Remove the temporary textarea
+  document.body.removeChild(tempTextArea);
+
+  // Alert the user
+  alert("Text copied to clipboard: " + text);
+}

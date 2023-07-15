@@ -4,7 +4,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculator</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/iconoir-icons/iconoir@main/css/iconoir.css"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="style.css" />
@@ -16,12 +23,58 @@
 
   <body>
     <center>
-      <div id="bodyblur" onclick="closeFinalAnswerPopup()">
-        <div class="arrayIndex">
-          <p type="text" name="arrayIndex" id="getArrayIndex" disabled></p>
-        </div>
-        <div id="finalEquation">
-          <p type="text" name="finalEquation" id="popupEquation" disabled></p>
+      <div id="bodyblur"> <!--onclick="closeFinalAnswerPopup()"-->
+        <div class="full">
+          <div id="equationDetail">
+            <div class="arrayIndex">
+              <p type="text" name="arrayIndex" id="getArrayIndex" disabled></p>
+            </div>
+            <div id="finalEquation">
+              <p type="text" name="finalEquation" id="popupEquation" disabled></p>
+            </div>
+          </div>
+          <div id="popupControl">
+            <button
+              class="arrowButtons"
+              type="button"
+              id="prevOnFull"
+              onclick="showPreviousItem()"
+            >
+              ‹
+            </button>
+            <button
+              class="arrowButtons"
+              type="button"
+              id="nextOnFull"
+              onclick="showNextItem()"
+            >
+              ›
+            </button>
+            <button
+              class="arrowButtons"
+              type="button"
+              id="closePopup"
+              onclick="closingPopup()"
+            >
+              ✖
+            </button>
+            <button
+              class="arrowButtons"
+              type="button"
+              id="textCopy"
+              onclick="textCopy()"
+            >
+              c
+            </button>
+            <button
+              class="arrowButtons"
+              type="button"
+              id="clearFull"
+              onclick="clearHisAlert()"
+            >
+              c
+            </button>
+          </div>
         </div>
       </div>
       <form name="calculator">
@@ -79,6 +132,7 @@
                 class="operator small"
                 name="power"
                 value="xʸ"
+                id="superscript"
                 onclick="appendOperator('**'), begin()"
               />
             </td>
@@ -122,6 +176,7 @@
                 class="operator small"
                 name="square root"
                 value="²√"
+                id="square"
                 onclick="sqr()"
               />
             </td>
@@ -170,6 +225,7 @@
                 class="operator small"
                 name="cube root"
                 value="³√"
+                id="cube"
                 onclick="cbr()"
               />
             </td>
@@ -227,8 +283,9 @@
               <input
                 type="button"
                 class="operator small"
-                onclick="negate()"
                 value="+/-"
+                id="plusMinus"
+                onclick="negate()"
               />
             </td>
 
@@ -245,7 +302,7 @@
               <input
                 type="button"
                 class="bold"
-                value="𝜋"
+                value="&pi;"
                 onclick="append('(22/7)')"
               />
             </td>
@@ -312,7 +369,9 @@
             </td>
 
             <td>
-              <p type="text" name="Display" id="displayHistory" disabled></p>
+              <div class="historyShower">
+                <p type="text" name="Display" id="displayHistory" disabled></p>
+              </div>
             </td>
 
             <td>

@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200;6..12,300;6..12,400;6..12,500;6..12,600;6..12,700;6..12,800;6..12,900;6..12,1000&display=swap");
 
 ::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0 0 6px var(--color-54d);
   border-radius: 3px;
   background-color: var(--bg-color);
 }
@@ -22,29 +22,33 @@
 :root {
   --bg-color: #e0e0e0;
   --text-color: #4a5267;
-  --color-222: #bebebe;
+  --card-border: #cdd2e0;
+  --color-222: #b5b5bb;
   --color-444: #ffffff;
   --color-f73: #ffffff73;
   --color-54d: #5e68794d;
-  --click-color: #6a3dd3;
-  --click-color-dark: #6a3dd3;
+  --click-color: #006bba;
+  --click-color-dark: #006bba;
 }
 
 .dark {
   --bg-color: #242730;
   --text-color: #fcfdfb;
-  --color-222: #2c2f36;
+  --card-border: #33353a;
+  --color-222: #222930;
   --color-444: #18181f;
   --color-f73: #07070873;
   --color-54d: #272e334d;
-  --click-color: #6a3dd3;
-  --click-color-dark: #6a3dd3;
+  --click-color: #00ffa1;
+  --click-color-dark: #00ffa1;
 }
 
 * {
   font-family: "Nunito Sans", sans-serif;
   background: var(--bg-color);
   color: var(--text-color);
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .material-symbols-outlined {
@@ -95,14 +99,36 @@ form {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: transparent;
+  background: var(--bg-color);
   display: none;
   z-index: 1000;
   transition: all 2s ease-in-out;
 }
 
+#bodyblur .full {
+  width: -moz-fit-content;
+  width: fit-content;
+  height: fit-content;
+  display: block;
+  align-items: center;
+  justify-content: center;
+}
+
+#bodyblur #equationDetail,
+#bodyblur #popupControl {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
 #bodyblur #getArrayIndex,
-#bodyblur #finalEquation {
+#bodyblur #finalEquation,
+#bodyblur #prevOnFull,
+#bodyblur #closepopup,
+#bodyblur #textCopy,
+#bodyblur #clearFull,
+#bodyblur #nextOnFull {
   margin-top: 8px;
   font-size: 35px;
   line-height: 10px;
@@ -117,44 +143,69 @@ form {
   align-items: center;
   justify-content: center;
   position: relative;
+  height: 80px;
+  width: -moz-fit-content;
+  width: fit-content;
+  border: none;
+  padding: 0 20px 0 20px;
   text-shadow: 3px 3px 5px var(--color-54d), -4px -4px 6px var(--color-444);
   box-shadow: -5px -5px 9px var(--color-f73), 5px 5px 9px var(--color-54d);
 }
 
 #bodyblur #getArrayIndex::after,
-#bodyblur #finalEquation::after {
+#bodyblur #finalEquation::after,
+#bodyblur #prevOnFull::after,
+#bodyblur #textCopy::after,
+#bodyblur #clearFull::after,
+#bodyblur #closePopup::after,
+#bodyblur #nextOnFull::after {
   content: "";
   position: absolute;
   height: 70px;
-  width: 590px;
+  width: calc(100% - 10px);
   background-color: transparent;
   border-radius: 12px;
   box-shadow: inset -5px -5px 9px var(--color-f73),
     inset 5px 5px 9px var(--color-54d);
 }
 
-#bodyblur #finalEquation {
-  height: 80px;
-  width: -moz-fit-content;
-  width: fit-content;
-  padding: 0 30px 0 30px;
+#bodyblur #prevOnFull,
+#bodyblur #closePopup,
+#bodyblur #textCopy,
+#bodyblur #clearFull,
+#bodyblur #nextOnFull {
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  padding: 0 10px 0 10px;
+  font-size: 25px;
+  padding: 10px;
+  font-size: 20px;
 }
 
-#bodyblur #finalEquation::after {
-  height: 70px;
+#bodyblur #prevOnFull::after,
+#bodyblur #closePopup::after,
+#bodyblur #textCopy::after,
+#bodyblur #clearFull::after,
+#bodyblur #nextOnFull::after {
+  border-radius: 50%;
+  height: 40px;
   width: calc(100% - 10px);
 }
 
+#bodyblur #finalEquation {
+  padding: 0 30px 0 30px;
+}
+
 #bodyblur #getArrayIndex {
-  height: 80px;
-  width: 80px;
-  color: var(--text-color);
-  text-shadow: 3px 3px 5px var(--color-54d), -4px -4px 6px var(--color-444);
+  min-width: 80px;
+  min-height: 80px;
+  padding: 0;
 }
 
 #bodyblur #getArrayIndex::after {
-  height: 70px;
-  width: 70px;
+  min-width: 70px;
+  min-height: 70px;
 }
 
 #bodyblur #finalEquation .closediv {
@@ -205,11 +256,6 @@ form {
   letter-spacing: 2px;
 }
 
-#display:active {
-  text-shadow: none;
-  color: var(--text-color);
-}
-
 .memoDisplay {
   height: 40px;
   width: 350px;
@@ -242,6 +288,8 @@ form {
   border-radius: 5px;
   margin-bottom: 15px;
   overflow: auto;
+  cursor: pointer;
+  border: 1px solid var(--card-border);
   text-align: left;
   box-shadow: -5px -5px 15px var(--color-444), 3px 3px 9px var(--color-222),
     inset 3px 3px 6px var(--color-222), inset -3px -3px 6px var(--color-444);
@@ -253,6 +301,7 @@ form {
 #nextButton {
   width: 40px;
   height: 60px;
+  font-size: 20px;
 }
 
 #equal {
@@ -265,16 +314,16 @@ form {
   width: 70px;
   font-size: 30px;
   border-radius: 5px;
-  border: none;
   margin-left: 10px;
   margin-bottom: 5px;
   text-align: center;
-  box-shadow: -5px -5px 15px var(--color-444), 3px 3px 9px var(--color-222),
-    inset 3px 3px 6px var(--color-444), inset -3px -3px 6px var(--color-222);
+  border: 1px solid var(--card-border);
+  box-shadow: -5px -5px 15px var(--color-444), 3px 3px 9px var(--color-222);
   font-weight: 700;
 }
 
 .clear:active {
+  border: none;
   box-shadow: -5px -5px 15px var(--color-444), 3px 3px 9px var(--color-222),
     inset 3px 3px 6px var(--color-222), inset -3px -3px 6px var(--color-444);
   color: var(--click-color);
@@ -291,17 +340,17 @@ input,
   width: 70px;
   height: 40px;
   margin: 8px;
-  border: none;
   border-radius: 5px;
   font-size: 20px;
+  border: 1px solid var(--card-border);
   text-overflow: ellipsis;
-  box-shadow: -5px -5px 15px var(--color-444), 3px 3px 9px var(--color-222),
-    inset 3px 3px 6px var(--color-444), inset -3px -3px 6px var(--color-222);
+  box-shadow: -5px -5px 15px var(--color-444), 3px 3px 9px var(--color-222);
 }
 
 input:active,
 .arrowButtons:active,
 .dark-light:active {
+  border: none;
   box-shadow: -5px -5px 15px var(--color-444), 3px 3px 9px var(--color-222),
     inset 3px 3px 6px var(--color-222), inset -3px -3px 6px var(--color-444);
   color: var(--click-color);
@@ -318,11 +367,10 @@ input:active,
   height: 40px;
   margin-top: 6px;
   margin-bottom: -20px;
-  border: none;
+  border: 1px solid var(--card-border);
   border-radius: 5px;
   font-size: 20px;
-  box-shadow: -5px -5px 15px var(--color-444), 3px 3px 9px var(--color-222),
-    inset 3px 3px 6px var(--color-444), inset -3px -3px 6px var(--color-222);
+  box-shadow: -5px -5px 15px var(--color-444), 3px 3px 9px var(--color-222);
   font-weight: 700;
 }
 
@@ -434,4 +482,36 @@ input:active,
 
 .material-symbols-outlined {
   font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
+}
+
+#getArrayIndex {
+  font-weight: 600;
+}
+
+.histiryShower {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.heartcontainer {
+  position: absolute;
+  /* Set dimensions for the inner div */
+  width: 200px;
+  height: 200px;
+  background-color: gray;
+  /* Center the div */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes fadeInOut {
+  0% {opacity: 1;}
+  50% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+.fadeAnimation {
+  animation: fadeInOut 1s;
 }
