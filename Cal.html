@@ -15,22 +15,25 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="style.css" />
-    <script
-      src="https://kit.fontawesome.com/de6203fbaf.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://kit.fontawesome.com/de6203fbaf.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
     <center>
-      <div id="bodyblur"> <!--onclick="closeFinalAnswerPopup()"-->
+      <div id="bodyblur">
+        <!--onclick="closeFinalAnswerPopup()"-->
         <div class="full">
           <div id="equationDetail">
             <div class="arrayIndex">
               <p type="text" name="arrayIndex" id="getArrayIndex" disabled></p>
             </div>
             <div id="finalEquation">
-              <p type="text" name="finalEquation" id="popupEquation" disabled></p>
+              <p
+                type="text"
+                name="finalEquation"
+                id="popupEquation"
+                disabled
+              ></p>
             </div>
           </div>
           <div id="popupControl">
@@ -64,7 +67,7 @@
               id="textCopy"
               onclick="textCopy()"
             >
-              c
+              <span class="material-symbols-outlined">content_copy</span>
             </button>
             <button
               class="arrowButtons"
@@ -72,7 +75,7 @@
               id="clearFull"
               onclick="clearHisAlert()"
             >
-              c
+              <span class="material-symbols-outlined">delete</span>
             </button>
           </div>
         </div>

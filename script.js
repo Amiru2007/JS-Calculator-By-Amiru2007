@@ -16,7 +16,7 @@ var iconClasses = [
   "\uf053",
   "\uf55a",
   "\uf0c5",
-  "\uf030",
+  "\uf51a",
   "\uf054",
   "\uf12b",
   "\uf698",
@@ -183,7 +183,7 @@ function clearFields() {
 function clearHisAlert() {
   if (confirm("Are you sure you want to clear history?")) {
     clearHis();
-    let bodyblur = document.getElementById('bodyblur');
+    let bodyblur = document.getElementById("bodyblur");
     bodyblur.style.display = "none";
     document.body.style.overflow = "auto";
   }
@@ -341,63 +341,61 @@ function displayItem(index) {
 }
 
 function showPreviousItem() {
-
   if (displayList.length <= 1) {
     alert("There's nothing");
     return;
   }
-  
-  currentItemIndex = (currentItemIndex - 1 + displayList.length) % displayList.length;
+
+  currentItemIndex =
+    (currentItemIndex - 1 + displayList.length) % displayList.length;
   displayItem(currentItemIndex);
 }
 
-document.getElementById("prevOnFull").onclick = function() {
+document.getElementById("prevOnFull").onclick = function () {
   // Delay the execution of the "delayedFunction" by 2 seconds (2000 milliseconds)
   setTimeout(showPreviousItem, 500);
 };
 
 function showNextItem() {
-
   if (displayList.length <= 1) {
     alert("There's nothing");
     return;
   }
-  
+
   currentItemIndex = (currentItemIndex + 1) % displayList.length;
   displayItem(currentItemIndex);
 }
 
-document.getElementById("nextOnFull").onclick = function() {
+document.getElementById("nextOnFull").onclick = function () {
   // Delay the execution of the "delayedFunction" by 2 seconds (2000 milliseconds)
   setTimeout(showNextItem, 500);
 };
 
 displayItem(currentItemIndex);
 
-const animateButton1 = document.getElementById('prevOnFull');
-const animateButton2 = document.getElementById('nextOnFull');
-const animatedElement = document.getElementById('equationDetail');
+const animateButton1 = document.getElementById("prevOnFull");
+const animateButton2 = document.getElementById("nextOnFull");
+const animatedElement = document.getElementById("equationDetail");
 
 function animateElement() {
-
   if (displayList.length <= 1) {
     return;
   }
 
   // Add the class to start the animation
-  animatedElement.classList.add('fadeAnimation');
+  animatedElement.classList.add("fadeAnimation");
 
   // Remove the class after the animation completes to reset it for future clicks
-  animatedElement.addEventListener('animationend', onAnimationEnd);
+  animatedElement.addEventListener("animationend", onAnimationEnd);
 }
 
 function onAnimationEnd() {
-  animatedElement.classList.remove('fadeAnimation');
-  animatedElement.removeEventListener('animationend', onAnimationEnd);
+  animatedElement.classList.remove("fadeAnimation");
+  animatedElement.removeEventListener("animationend", onAnimationEnd);
 }
 
-animateButton1.addEventListener('click', animateElement);
-animateButton2.addEventListener('click', animateElement);
+animateButton1.addEventListener("click", animateElement);
+animateButton2.addEventListener("click", animateElement);
 
 function updateFavicon() {
   var isDark =
@@ -456,7 +454,7 @@ function getRowNumber() {
 
 function stopContinuousFunction() {
   clearInterval(intervalId); // Clear the interval
-  
+
   var div = document.getElementById("bodyblur");
   var sourceText = document.getElementById("displayHistory").innerText;
   div.style.display = "flex";
@@ -464,7 +462,7 @@ function stopContinuousFunction() {
 }
 
 function closingPopup() {
-  let bodyblur = document.getElementById('bodyblur');
+  let bodyblur = document.getElementById("bodyblur");
   bodyblur.style.display = "none";
   document.body.style.overflow = "auto";
 }

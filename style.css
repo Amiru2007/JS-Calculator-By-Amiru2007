@@ -242,6 +242,14 @@ form {
     0px 0px 4px rgba(255, 255, 255, 0.2) !important;
 }
 
+.arrowButtons .material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 28;
+}
+
+.arrowButtons:active, .arrowButtons:active span {
+  color: var(--click-color);
+}
+
 #display {
   height: 60px;
   width: 340px;
@@ -507,9 +515,15 @@ input:active,
 }
 
 @keyframes fadeInOut {
-  0% {opacity: 1;}
-  50% {opacity: 0;}
-  100% {opacity: 1;}
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .fadeAnimation {
