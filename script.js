@@ -189,6 +189,20 @@ function clearHisAlert() {
   }
 }
 
+function clearFull() {
+  let displayItem = document.getElementById("popupEquation").value;
+  let ItemIndex = displayList[displayItem]
+
+  for( var i = 0; i < arr.length; i++){ 
+    if ( arr[i] === ItemIndex) { 
+        arr.splice(i, 1); 
+    }
+  }
+
+  let PrevItem = ItemIndex - 1;
+  document.getElementById("displayHistory").innerHTML = prevItem;
+}
+
 function clearHis() {
   displayList.length = 0;
   var list = displayList;
@@ -343,6 +357,9 @@ function displayItem(index) {
 function showPreviousItem() {
   if (displayList.length <= 1) {
     alert("There's nothing");
+    let bodyblur = document.getElementById("bodyblur");
+    bodyblur.style.display = "none";
+    document.body.style.overflow = "auto";
     return;
   }
 
@@ -359,6 +376,9 @@ document.getElementById("prevOnFull").onclick = function () {
 function showNextItem() {
   if (displayList.length <= 1) {
     alert("There's nothing");
+    let bodyblur = document.getElementById("bodyblur");
+    bodyblur.style.display = "none";
+    document.body.style.overflow = "auto";
     return;
   }
 
@@ -510,3 +530,14 @@ function textCopy() {
   // Alert the user
   alert("Text copied to clipboard: " + text);
 }
+
+const arrayItems = ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5'];
+
+// Get the items container element
+const itemsContainer = document.getElementById('items-container');
+
+// Join array items into a string with line breaks
+const itemsText = arrayItems.join('<br>');
+
+// Set the innerHTML of the div to display the items
+itemsContainer.innerHTML = itemsText;

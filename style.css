@@ -80,14 +80,23 @@ form {
     inset 3px 3px 6px var(--color-444), inset -3px -3px 6px var(--color-222);
 }
 
-.second {
-  font-weight: 600;
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+ 
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
 }
 
-.second:active {
-  box-shadow: -5px -5px 15px var(--color-444), 3px 3px 9px var(--color-222),
-    inset 3px 3px 6px var(--color-222), inset -3px -3px 6px var(--color-444);
-  color: var(--click-color-dark);
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
 }
 
 #bodyblur {
@@ -128,6 +137,7 @@ form {
 #bodyblur #closepopup,
 #bodyblur #textCopy,
 #bodyblur #clearFull,
+#bodyblur #fullHistory,
 #bodyblur #nextOnFull {
   margin-top: 8px;
   font-size: 35px;
@@ -157,6 +167,7 @@ form {
 #bodyblur #prevOnFull::after,
 #bodyblur #textCopy::after,
 #bodyblur #clearFull::after,
+#bodyblur #fullHistory::after,
 #bodyblur #closePopup::after,
 #bodyblur #nextOnFull::after {
   content: "";
@@ -173,6 +184,7 @@ form {
 #bodyblur #closePopup,
 #bodyblur #textCopy,
 #bodyblur #clearFull,
+#bodyblur #fullHistory,
 #bodyblur #nextOnFull {
   border-radius: 50%;
   height: 50px;
@@ -187,6 +199,7 @@ form {
 #bodyblur #closePopup::after,
 #bodyblur #textCopy::after,
 #bodyblur #clearFull::after,
+#bodyblur #fullHistory::after,
 #bodyblur #nextOnFull::after {
   border-radius: 50%;
   height: 40px;
@@ -246,8 +259,13 @@ form {
   font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 28;
 }
 
-.arrowButtons:active, .arrowButtons:active span {
+.arrowButtons:active,
+.arrowButtons:active span {
   color: var(--click-color);
+}
+
+#bodyblur a {
+  text-decoration: none;
 }
 
 #display {
@@ -528,4 +546,12 @@ input:active,
 
 .fadeAnimation {
   animation: fadeInOut 1s;
+}
+
+
+.item-div {
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin: 5px;
+  background-color: #f9f9f9;
 }
